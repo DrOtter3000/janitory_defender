@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b81blgtnpkjb3"]
+[gd_scene load_steps=5 format=3 uid="uid://b81blgtnpkjb3"]
+
+[ext_resource type="PackedScene" uid="uid://5ovurbywxkcn" path="res://Player/player.tscn" id="1_w3rcj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0uau5"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -26,3 +28,6 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(64, 1, 64)
+
+[node name="Player" parent="." instance=ExtResource("1_w3rcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.81101, 0)

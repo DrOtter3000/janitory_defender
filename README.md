@@ -14,6 +14,7 @@
 ## Controls
 
 - Movement: W, A, S, D
+- Jump: Spacebar
 - Attack: Left Mouse Button
 - Interact: E
 - Pause Menu: Esc
