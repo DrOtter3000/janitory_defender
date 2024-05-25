@@ -13,10 +13,10 @@
 
 ## Controls
 
-Movement: W, A, S, D
-Attack: Left Mouse Button
-Interact: E
-Pause Menu: Esc
+- Movement: W, A, S, D
+- Attack: Left Mouse Button
+- Interact: E
+- Pause Menu: Esc
 
 ## Contributing
 
