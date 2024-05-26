@@ -29,6 +29,8 @@ alignment = 1
 [node name="Lbl_Title" type="Label" parent="CenterContainer/TitleContainer"]
 layout_mode = 2
 theme = ExtResource("2_3xjuh")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 100
 text = "Janitor Defender"
 horizontal_alignment = 1
