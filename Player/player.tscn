@@ -18,9 +18,9 @@ mesh = SubResource("CapsuleMesh_h57ha")
 shape = SubResource("CapsuleShape3D_jj3xa")
 
 [node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 
 [node name="SmoothCamera" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 top_level = true
 visible = false
 script = ExtResource("2_o3j1b")

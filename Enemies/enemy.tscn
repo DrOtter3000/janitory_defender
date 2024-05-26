@@ -1,10 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0uskbfwt5p70"]
+[gd_scene load_steps=9 format=3 uid="uid://b0uskbfwt5p70"]
 
 [ext_resource type="Script" path="res://Enemies/enemy.gd" id="1_2ts3h"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tnovq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wjcbp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jh3su"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oyf7b"]
+size = Vector3(0.5, 0.2, 0.2)
+
+[sub_resource type="Animation" id="Animation_d5arp"]
+resource_name = "Attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sy4nc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_thf66"]
+_data = {
+"Attack": SubResource("Animation_d5arp"),
+"RESET": SubResource("Animation_sy4nc")
+}
 
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_2ts3h")
@@ -16,3 +59,13 @@ mesh = SubResource("CapsuleMesh_tnovq")
 shape = SubResource("CapsuleShape3D_wjcbp")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Visor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
+material_override = SubResource("StandardMaterial3D_jh3su")
+mesh = SubResource("BoxMesh_oyf7b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_thf66")
+}
