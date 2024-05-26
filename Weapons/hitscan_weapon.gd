@@ -4,6 +4,7 @@ extends Node3D
 @export var fire_rate := 14.0
 @export var recoil := 0.05
 @export var weapon_mesh: Node3D
+@export var weapon_damage := 15
 
 @onready var cooldown_timer: Timer = $CooldownTimer
 @onready var weapon_position: Vector3 = weapon_mesh.position
@@ -24,4 +25,6 @@ func shoot() -> void:
 	
 	weapon_mesh.position.z += recoil
 	
-	print(ray_cast_3d.get_collider())
+	var collider = ray_cast_3d.get_collider()
+	if collider is Enemy:
+		collider.hitpoints -= weapon_damage
