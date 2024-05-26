@@ -13,6 +13,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var aggro_range := 12.0
 @export var attack_range := 1.5
 @export var max_hitpoints := 100
+@export var damage := 20
 
 var player
 var provoked := false
@@ -32,7 +33,7 @@ func _process(delta: float) -> void:
 	if provoked:
 		navigation_agent_3d.target_position = player.global_position
 		if global_position.distance_to(player.global_position) <= attack_range:
-			attack()
+			animation_player.play("Attack")
 
 
 func _physics_process(delta: float) -> void:
@@ -65,4 +66,4 @@ func look_at_target(direction: Vector3) -> void:
 
 
 func attack() -> void:
-	animation_player.play("Attack")
+	player.hitpoints -= damage
