@@ -1,3 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://dtdon6iqghbvu"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dtdon6iqghbvu"]
+
+[ext_resource type="FontFile" uid="uid://cw6skdta8vuqn" path="res://Assets/Fonts/MonoglycerideBold.ttf" id="1_cyqfp"]
 
 [resource]
+default_font = ExtResource("1_cyqfp")
+default_font_size = 35

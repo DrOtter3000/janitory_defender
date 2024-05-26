@@ -42,6 +42,7 @@ alignment = 1
 [node name="OptionVBoxContainer" type="VBoxContainer" parent="CenterContainer/OptionHBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_p24mx")
+theme_override_constants/separation = 10
 
 [node name="Btn_NewGame" type="Button" parent="CenterContainer/OptionHBoxContainer/OptionVBoxContainer"]
 layout_mode = 2
