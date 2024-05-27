@@ -6,6 +6,7 @@ const SPEED := 5.0
 @export var jump_height: float = 1.0
 @export var fall_multiplier: float = 2.5
 @export var max_hitpoints := 100
+@onready var ammo_handler: AmmoHandler = %AmmoHandler
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")

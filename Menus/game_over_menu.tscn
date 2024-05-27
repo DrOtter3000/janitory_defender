@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dbfl1wnxwpfx"]
 
-[ext_resource type="Theme" uid="uid://dtdon6iqghbvu" path="res://Assets/Themes/Menu_Theme.tres" id="1_ti2x1"]
+[ext_resource type="Theme" uid="uid://dkanrxy7lrqmt" path="res://Assets/Themes/HUD_Theme.tres" id="1_bnj10"]
 [ext_resource type="Script" path="res://Menus/game_over_menu.gd" id="2_v63yj"]
 [ext_resource type="Shader" uid="uid://cvniy8ewr8yt6" path="res://Menus/game_over_menu.tres" id="3_cmkg2"]
 
@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ti2x1")
+theme = ExtResource("1_bnj10")
 script = ExtResource("2_v63yj")
 
 [node name="BackgroundBlur" type="TextureRect" parent="."]
