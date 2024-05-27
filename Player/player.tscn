@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://5ovurbywxkcn"]
+[gd_scene load_steps=16 format=3 uid="uid://5ovurbywxkcn"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_s7413"]
 [ext_resource type="Script" path="res://Player/SmoothCamera.gd" id="2_o3j1b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://xpvcsasfaw6f" path="res://Player/damage.png" id="5_mdim5"]
 [ext_resource type="Script" path="res://Player/AmmoHandler.gd" id="6_uttgl"]
 [ext_resource type="PackedScene" uid="uid://dbfl1wnxwpfx" path="res://Menus/game_over_menu.tscn" id="6_wdv1c"]
+[ext_resource type="Theme" uid="uid://dtdon6iqghbvu" path="res://Assets/Themes/Menu_Theme.tres" id="10_mve6c"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_h57ha"]
 
@@ -149,8 +150,9 @@ ammo_type = 1
 [node name="Rifle" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" node_paths=PackedStringArray("ammo_handler") instance=ExtResource("3_0ertj")]
 ammo_handler = NodePath("../../AmmoHandler")
 
-[node name="AmmoHandler" type="Node" parent="SubViewportContainer/SubViewport/WeaponCamera"]
+[node name="AmmoHandler" type="Node" parent="SubViewportContainer/SubViewport/WeaponCamera" node_paths=PackedStringArray("ammo_label")]
 script = ExtResource("6_uttgl")
+ammo_label = NodePath("../../../../MarginContainer/Lbl_Ammo")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
@@ -183,3 +185,24 @@ libraries = {
 
 [node name="GameOverMenu" parent="." instance=ExtResource("6_wdv1c")]
 visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Lbl_Ammo" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("10_mve6c")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "60"
