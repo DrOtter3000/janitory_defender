@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://5ovurbywxkcn"]
+[gd_scene load_steps=15 format=3 uid="uid://5ovurbywxkcn"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_s7413"]
 [ext_resource type="Script" path="res://Player/SmoothCamera.gd" id="2_o3j1b"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Player/Crosshair.gd" id="3_n8ph8"]
 [ext_resource type="PackedScene" uid="uid://bw1tkw2baic18" path="res://Weapons/SMG.tscn" id="3_srrtd"]
 [ext_resource type="Texture2D" uid="uid://xpvcsasfaw6f" path="res://Player/damage.png" id="5_mdim5"]
+[ext_resource type="Script" path="res://Player/AmmoHandler.gd" id="6_uttgl"]
 [ext_resource type="PackedScene" uid="uid://dbfl1wnxwpfx" path="res://Menus/game_over_menu.tscn" id="6_wdv1c"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_h57ha"]
@@ -141,9 +142,15 @@ script = ExtResource("3_koygr")
 weapon_1 = NodePath("SMG")
 weapon_2 = NodePath("Rifle")
 
-[node name="SMG" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" instance=ExtResource("3_srrtd")]
+[node name="SMG" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" node_paths=PackedStringArray("ammo_handler") instance=ExtResource("3_srrtd")]
+ammo_handler = NodePath("../../AmmoHandler")
+ammo_type = 1
 
-[node name="Rifle" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" instance=ExtResource("3_0ertj")]
+[node name="Rifle" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" node_paths=PackedStringArray("ammo_handler") instance=ExtResource("3_0ertj")]
+ammo_handler = NodePath("../../AmmoHandler")
+
+[node name="AmmoHandler" type="Node" parent="SubViewportContainer/SubViewport/WeaponCamera"]
+script = ExtResource("6_uttgl")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
