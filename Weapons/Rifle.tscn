@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw1tkw2baic18"]
+[gd_scene load_steps=9 format=3 uid="uid://b42cj6rbv4i84"]
 
-[ext_resource type="PackedScene" uid="uid://bl3ui81bhmfs6" path="res://Weapons/hitscan_weapon.tscn" id="1_5780o"]
-[ext_resource type="PackedScene" uid="uid://cyxc7cctvgkj4" path="res://Weapons/SMG.glb" id="2_87whr"]
-[ext_resource type="PackedScene" uid="uid://iufcrv3g26f0" path="res://Weapons/sparks.tscn" id="2_mm1hg"]
+[ext_resource type="PackedScene" uid="uid://bl3ui81bhmfs6" path="res://Weapons/hitscan_weapon.tscn" id="1_euhi3"]
+[ext_resource type="PackedScene" uid="uid://iufcrv3g26f0" path="res://Weapons/sparks.tscn" id="2_hom7y"]
+[ext_resource type="PackedScene" uid="uid://dtnyd0uwion11" path="res://Weapons/Rifle.glb" id="3_xdr2q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tw4v1"]
 emission_enabled = true
@@ -26,29 +26,28 @@ scale_curve = SubResource("CurveTexture_0r7nx")
 [sub_resource type="BoxMesh" id="BoxMesh_cv2y3"]
 size = Vector3(0.05, 0.05, 0.05)
 
-[node name="SMG" node_paths=PackedStringArray("weapon_mesh", "muzzle_flash") instance=ExtResource("1_5780o")]
-weapon_mesh = NodePath("SMG")
+[node name="Rifle" node_paths=PackedStringArray("weapon_mesh", "muzzle_flash") instance=ExtResource("1_euhi3")]
+fire_rate = 8.0
+recoil = 0.03
+weapon_mesh = NodePath("Rifle")
+weapon_damage = 70
 muzzle_flash = NodePath("MuzzleFlash")
-sparks = ExtResource("2_mm1hg")
-automatic = true
+sparks = ExtResource("2_hom7y")
 
-[node name="SMG" parent="." index="1" instance=ExtResource("2_87whr")]
-transform = Transform3D(-0.266987, 0.125073, 0.955549, 0.0500272, 0.992004, -0.115867, -0.962401, 0.0168684, -0.27111, 0.559, -0.199, -0.504)
+[node name="Rifle" parent="." index="1" instance=ExtResource("3_xdr2q")]
+transform = Transform3D(-0.266987, 0.125073, 0.955549, 0.0500272, 0.992004, -0.115867, -0.962401, 0.0168685, -0.271109, 0.559, -0.199, -0.504)
 
-[node name="Cylinder" parent="SMG" index="0"]
+[node name="Cylinder" parent="Rifle" index="0"]
 layers = 2
 
-[node name="Cube" parent="SMG" index="1"]
+[node name="Cube" parent="Rifle" index="1"]
 layers = 2
 
-[node name="Cube_002" parent="SMG" index="2"]
-layers = 2
-
-[node name="Cylinder_001" parent="SMG" index="3"]
+[node name="Cube_001" parent="Rifle" index="2"]
 layers = 2
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="." index="3"]
-transform = Transform3D(-0.228572, 0, 0.973527, 0, 1, 0, -0.973527, 0, -0.228572, 0.280619, -0.147533, -1.24872)
+transform = Transform3D(-0.228572, 0, 0.973527, 0, 1, 0, -0.973527, 0, -0.228572, 0.280619, -0.147533, -1.51297)
 layers = 2
 material_override = SubResource("StandardMaterial3D_tw4v1")
 cast_shadow = 0
@@ -61,4 +60,4 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_34kcp")
 draw_pass_1 = SubResource("BoxMesh_cv2y3")
 
-[editable path="SMG"]
+[editable path="Rifle"]

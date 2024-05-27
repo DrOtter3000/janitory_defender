@@ -16,6 +16,7 @@
 - Movement: W, A, S, D
 - Jump: Spacebar
 - Attack: Left Mouse Button
+- Change weapon: 1, 2
 - Interact: E
 - Pause Menu: Esc
 
