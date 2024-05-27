@@ -17,8 +17,10 @@ var hitpoints: int = max_hitpoints:
 			damage_animation_player.play("TakeDamage")
 		hitpoints = value
 		if hitpoints <= 0:
-			print("ded")
+			game_over_menu.game_over()
 
+
+@onready var game_over_menu: Control = $GameOverMenu
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var damage_animation_player: AnimationPlayer = $DamageTexture/DamageAnimationPlayer
 
