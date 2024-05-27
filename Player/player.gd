@@ -6,7 +6,13 @@ const SPEED := 5.0
 @export var jump_height: float = 1.0
 @export var fall_multiplier: float = 2.5
 @export var max_hitpoints := 100
+@export var aim_multiplier := 0.7
+
 @onready var ammo_handler: AmmoHandler = %AmmoHandler
+@onready var smooth_camera: Camera3D = %SmoothCamera
+@onready var smooth_camera_fov := smooth_camera.fov
+@onready var weapon_camera: Camera3D = %WeaponCamera
+@onready var weapon_camera_fov := weapon_camera.fov
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -30,6 +36,25 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("aim"):
+		smooth_camera.fov = lerp(smooth_camera.fov, 
+		smooth_camera_fov * aim_multiplier, 
+		delta * 20.0
+		)
+		weapon_camera.fov = lerp(weapon_camera.fov, 
+		weapon_camera_fov * aim_multiplier,
+		delta * 20.0
+		)
+	else:
+		smooth_camera.fov = lerp(smooth_camera.fov, 
+		smooth_camera_fov,
+		delta * 30.0
+		)
+		weapon_camera.fov = lerp(weapon_camera.fov, 
+		weapon_camera_fov,
+		delta * 30.0
+		)
 func _physics_process(delta) -> void:
 	# Allows player to turn
 	handle_camera_rotation()
@@ -52,6 +77,9 @@ func _physics_process(delta) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if Input.is_action_pressed("aim"):
+			velocity.x *= aim_multiplier
+			velocity.z *= aim_multiplier
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

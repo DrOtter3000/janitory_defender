@@ -113,6 +113,7 @@ shape = SubResource("CapsuleShape3D_jj3xa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 
 [node name="SmoothCamera" type="Camera3D" parent="CameraPivot"]
+unique_name_in_owner = true
 top_level = true
 cull_mask = 1048573
 script = ExtResource("2_o3j1b")
@@ -135,6 +136,7 @@ size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
 [node name="WeaponCamera" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
 cull_mask = 1047554
 fov = 40.0
 
