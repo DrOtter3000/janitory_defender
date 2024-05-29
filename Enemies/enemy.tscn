@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0uskbfwt5p70"]
+[gd_scene load_steps=11 format=3 uid="uid://b0uskbfwt5p70"]
 
 [ext_resource type="Script" path="res://Enemies/enemy.gd" id="1_2ts3h"]
 
@@ -58,10 +58,48 @@ tracks/0/keys = {
 "values": [Vector3(1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_sbad2"]
+resource_name = "attack_door"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"damage_building"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2bvy4"]
+resource_name = "attack_generator"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"damage_building"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_thf66"]
 _data = {
 "Attack": SubResource("Animation_d5arp"),
-"RESET": SubResource("Animation_sy4nc")
+"RESET": SubResource("Animation_sy4nc"),
+"attack_door": SubResource("Animation_sbad2"),
+"attack_generator": SubResource("Animation_2bvy4")
 }
 
 [node name="Enemy" type="CharacterBody3D"]
@@ -70,6 +108,8 @@ floor_constant_speed = true
 floor_max_angle = 1.22173
 floor_snap_length = 0.5
 script = ExtResource("1_2ts3h")
+speed = 5.0
+damage = 15
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_tnovq")

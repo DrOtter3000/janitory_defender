@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://daipt4djlbggm"]
+
+[ext_resource type="Script" path="res://Levels/Generator.gd" id="1_5bb7g"]
+[ext_resource type="Material" uid="uid://bq3ngqp6fgt0d" path="res://Levels/Materials/orange_material.tres" id="2_q61k5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ykn2c"]
+material = ExtResource("2_q61k5")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4epxy"]
+
+[node name="Generator" type="MeshInstance3D" groups=["generator"]]
+mesh = SubResource("BoxMesh_ykn2c")
+script = ExtResource("1_5bb7g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_4epxy")

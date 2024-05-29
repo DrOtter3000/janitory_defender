@@ -16,6 +16,9 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var damage := 20
 
 var player
+var door
+var generator
+
 var provoked := false
 var hitpoints: int = max_hitpoints:
 	set(value):
@@ -27,6 +30,8 @@ var hitpoints: int = max_hitpoints:
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	door = get_tree().get_first_node_in_group("door")
+	generator = get_tree().get_first_node_in_group("generator")
 
 
 func _process(delta: float) -> void:
@@ -34,6 +39,15 @@ func _process(delta: float) -> void:
 		navigation_agent_3d.target_position = player.global_position
 		if global_position.distance_to(player.global_position) <= attack_range:
 			animation_player.play("Attack")
+	else:
+		if Gamestate.door_health > 0:
+			navigation_agent_3d.target_position = door.global_position
+			if global_position.distance_to(door.global_position) <= attack_range:
+				animation_player.play("attack_door")
+		else:
+			navigation_agent_3d.target_position = generator.global_position
+			if global_position.distance_to(generator.global_position) <= attack_range:
+				animation_player.play("attack_generator")
 
 
 func _physics_process(delta: float) -> void:
@@ -67,3 +81,10 @@ func look_at_target(direction: Vector3) -> void:
 
 func attack() -> void:
 	player.hitpoints -= damage
+
+
+func damage_building() -> void:
+	if Gamestate.door_health > 0:
+		Gamestate.door_health -= damage
+	else:
+		Gamestate.generator_health -= damage
