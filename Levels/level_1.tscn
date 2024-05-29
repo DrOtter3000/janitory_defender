@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://5ovurbywxkcn" path="res://Player/player.tscn" id="1_lop7h"]
 [ext_resource type="Material" uid="uid://bccn2wthcw1as" path="res://Levels/Materials/bunker_ground.tres" id="2_bc8xj"]
-[ext_resource type="PackedScene" uid="uid://b0uskbfwt5p70" path="res://Enemies/enemy.tscn" id="2_hy6px"]
 [ext_resource type="Material" uid="uid://c1at675a3yymd" path="res://Levels/Materials/bunker_wall.tres" id="3_8a8er"]
 [ext_resource type="PackedScene" uid="uid://daipt4djlbggm" path="res://Levels/generator.tscn" id="4_g4jij"]
 [ext_resource type="PackedScene" uid="uid://cu3xixfriudfx" path="res://Levels/Assets/lamp.tscn" id="4_mhiyc"]
 [ext_resource type="PackedScene" uid="uid://cck6avy8xref7" path="res://Levels/Assets/Grass20x20.glb" id="4_sxjap"]
 [ext_resource type="PackedScene" uid="uid://ne2kcei0btg7" path="res://Levels/bridge.tscn" id="6_en5m8"]
 [ext_resource type="PackedScene" uid="uid://b7vxadoq6vfb5" path="res://Levels/door.tscn" id="7_ny6uy"]
+[ext_resource type="PackedScene" uid="uid://lhu63u7pddux" path="res://Enemies/spawner.tscn" id="9_4brsy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aqdmy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1030,20 +1030,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -0.1, 51)
 [node name="Grass20x267" parent="Level/Node3D" instance=ExtResource("4_sxjap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.1, 51)
 
-[node name="Enemy" parent="." instance=ExtResource("2_hy6px")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.3, 71)
-
-[node name="Enemy2" parent="." instance=ExtResource("2_hy6px")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.3, 73)
-
-[node name="Enemy3" parent="." instance=ExtResource("2_hy6px")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.3, 73)
-
-[node name="Enemy4" parent="." instance=ExtResource("2_hy6px")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.3, 75)
-
-[node name="Enemy5" parent="." instance=ExtResource("2_hy6px")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.3, 75)
-
-[node name="Enemy6" parent="." instance=ExtResource("2_hy6px")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.3, 77)
+[node name="Spawner" parent="." instance=ExtResource("9_4brsy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 75.5609)
