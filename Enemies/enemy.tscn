@@ -5,6 +5,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tnovq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wjcbp"]
+radius = 0.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jh3su"]
 albedo_color = Color(1, 0, 0, 1)
@@ -64,6 +65,10 @@ _data = {
 }
 
 [node name="Enemy" type="CharacterBody3D"]
+wall_min_slide_angle = 0.698132
+floor_constant_speed = true
+floor_max_angle = 1.22173
+floor_snap_length = 0.5
 script = ExtResource("1_2ts3h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -73,6 +78,8 @@ mesh = SubResource("CapsuleMesh_tnovq")
 shape = SubResource("CapsuleShape3D_wjcbp")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+height = 2.0
+radius = 0.4
 
 [node name="Visor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)

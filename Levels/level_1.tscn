@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc2d6vliruvm0"]
+[gd_scene load_steps=12 format=3 uid="uid://cc2d6vliruvm0"]
 
 [ext_resource type="PackedScene" uid="uid://5ovurbywxkcn" path="res://Player/player.tscn" id="1_lop7h"]
 [ext_resource type="Material" uid="uid://bccn2wthcw1as" path="res://Levels/Materials/bunker_ground.tres" id="2_bc8xj"]
+[ext_resource type="PackedScene" uid="uid://b0uskbfwt5p70" path="res://Enemies/enemy.tscn" id="2_hy6px"]
 [ext_resource type="Material" uid="uid://c1at675a3yymd" path="res://Levels/Materials/bunker_wall.tres" id="3_8a8er"]
 [ext_resource type="PackedScene" uid="uid://cu3xixfriudfx" path="res://Levels/Assets/lamp.tscn" id="4_mhiyc"]
 [ext_resource type="PackedScene" uid="uid://cck6avy8xref7" path="res://Levels/Assets/Grass20x20.glb" id="4_sxjap"]
@@ -19,6 +20,20 @@ sky = SubResource("Sky_12n4o")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_ma8h1"]
+vertices = PackedVector3Array(-29.5, 6.3, 29.75, 29.75, 6.3, 29.75, 29.5, 6.3, -29.5, -29.5, 6.3, -29.5, -28.25, -1.7, 1, -0.5, -1.7, 1.25, -0.5, -1.3, -0.25, -0.5, -1.3, -0.25, 1.25, -1.3, -0.5, 1, -1.3, -28.25, -28.25, -1.3, -28.25, -28.25, -1.7, 1, 1.25, -1.3, -0.5, 28.5, -1.3, -0.5, 28.5, -1.3, -28.25, 1, -1.3, -28.25, 21.5, 0.7, 26, 21.75, 1.5, 29.75, 23.5, 1.5, 29.75, 23.75, 0.7, 26, 9.5, 0.7, 7.25, 7.25, 0.7, 13.25, 7.25, 0.7, 15.75, 21.5, 0.7, 26, 23.75, 0.7, 26, 26, 0.7, 7.25, 6.75, 0.7, 13.75, 0.5, 0.7, 13.75, 0.5, 0.7, 15.5, 7.25, 0.7, 15.75, 7.25, 0.7, 15.75, 7.25, 0.7, 26, 21.5, 0.7, 26, 7.25, 0.7, 13.25, 6.75, 0.7, 13.75, 7.25, 0.7, 15.75, 9.5, 0.7, 7.25, 9.25, 0.7, 0.5, 7.5, 0.7, 0.5, 7.25, 0.7, 13.25, 23.75, 0.7, 26, 26, 0.7, 26, 26, 0.7, 7.25, 6.25, -1.3, 6.25, 6.25, -1.3, 0.75, 0.75, -1.3, 0.75, 0.75, -1.3, 12.5, 6, -1.3, 12.5, 27, -1.3, 6, 28.5, -1.3, 6, 28.5, -1.3, 0.75, 27, -1.3, 6, 28.5, -1.3, 0.75, 10.5, -1.3, 0.75, 10.5, -1.3, 6, -16.75, -1.3, 30.5, -12, -1.3, 30.5, -11.75, -1.3, 28.5, -17, -1.3, 28.5, -0.5, -1.7, 1.25, -28.25, -1.7, 1, -17, -1.3, 28.5, -11.75, -1.3, 28.5, -11.75, -1.3, 28.5, -0.5, -1.3, 28.5, -0.5, -1.7, 1.25, -28.25, -1.7, 1, -28.25, -1.3, 28.5, -17, -1.3, 28.5, 20.5, -1.3, 27.25, 6, -1.3, 27, 6, -1.3, 28.5, 20.75, -1.3, 27.75, 28.5, -1.3, 6, 27, -1.3, 6, 27.25, -1.3, 26.75, 28.5, -1.3, 28.5, 20.75, -1.3, 27.75, 6, -1.3, 28.5, 28.5, -1.3, 28.5, 26.75, -1.3, 27.25, 20.75, -1.3, 27.75, 28.5, -1.3, 28.5, 27.25, -1.3, 26.75, 26.75, -1.3, 27.25, 28.5, -1.3, 28.5, 0.75, -1.3, 28.5, 6, -1.3, 28.5, 6, -1.3, 27, 6, -1.3, 27, 6, -1.3, 16.75, 0.75, -1.3, 16.75, 0.75, -1.3, 28.5, -25, 0.7, 39.5, -25, 0.7, 30.75, -30.25, 0.7, 30.75, -30.25, 0.7, 30.75, -30.5, 0.7, 29.5, -43.5, 0.7, 29.5, -43.5, 0.7, 39.5, -25, 0.7, 39.5, -30.25, 0.7, 30.75, -43.5, 0.7, 29.5, 35.5, 0.7, 29.5, 30.75, 0.7, 29.5, 30.25, 0.7, 30.75, 13.75, 0.7, 41.75, 12.25, 0.7, 41.75, 12.5, 0.7, 60.5, 30.25, 0.7, 30.75, 14.25, 0.7, 30.75, 14.25, 0.7, 41.25, 14.25, 0.7, 41.25, 13.75, 0.7, 41.75, 12.5, 0.7, 60.5, 35.5, 0.7, 60.5, 35.5, 0.7, 29.5, 30.25, 0.7, 30.75, -24, 7.5, 30.5, -24, 7.5, 34.5, -23.25, 8.3, 34.75, -1.5, 8.3, 39.75, -0.25, 8.3, 39.5, -0.25, 8.3, 30.5, -22.5156, 8.3, 30.5, -23.25, 8.3, 34.75, -23.25, 7.9, 40.25, -1.5, 8.3, 39.75, -23.25, 8.3, 38.875, -23.25, 7.9, 40.25, -23.75, 7.1, 40.75, -1.25, 7.1, 40.75, -1.5, 8.3, 39.75, -16.75, 0.3, 39.5, -12, 0.3, 39.75, -12, -1.3, 30.5, -16.75, -1.3, 30.5, 7.25, 7.1, 40.75, 7.25, 7.5, 40.5, 4.5, 7.9, 40.25, 1, 7.1, 40.75, -0.25, 8.3, 39.5, 1, 8.3, 39.5, 4.75, 8.3, 39.25, 6, 8.3, 30.5, -0.25, 8.3, 30.5, 1, 8.3, 39.5, 1, 7.1, 40.75, 4.5, 7.9, 40.25, 4.75, 8.3, 39.25, 4.75, 8.3, 39.25, 6.25, 8.3, 39.25, 6, 8.3, 30.5, 9.5, 7.5, 40.5, 7.25, 7.5, 40.5, 7.25, 7.1, 40.75, 12.75, 7.1, 40.75, 9.75, 8.3, 39.5, 12, 7.9, 40, 11.75, 8.3, 30.5, 9.5, 7.5, 40.5, 12.75, 7.1, 40.75, 12, 7.9, 40, 9.75, 8.3, 39.5, 9.75, 8.3, 39.5, 11.75, 8.3, 30.5, 6, 8.3, 30.5, 6.25, 8.3, 39.25, -3.5, 0.7, 30.75, -3.5, 0.7, 40.5, 13, 0.7, 40.5, 13, 0.7, 30.75, -23.25, 0.7, 44.75, -22.5, 0.7, 41.75, -24.75, 0.7, 41.75, -19.75, 0.7, 60.5, -19.75, 0.7, 46, -23.25, 0.7, 44.75, -24.75, 0.7, 41.75, -25, 0.7, 39.5, -43.5, 0.7, 39.5, -19.75, 0.7, 60.5, -23.25, 0.7, 44.75, -24.75, 0.7, 41.75, -43.5, 0.7, 39.5, -43.5, 0.7, 60.5, -10, 0.7, 45.75, -11.25, 0.7, 41.75, -12, 0.7, 41.5, -16.75, 0.7, 41.25, -17.75, 0.7, 41.75, -19, 0.7, 45.75, -12, 0.3, 39.75, -16.75, 0.3, 39.5, -16.75, 0.7, 41.25, -12, 0.7, 41.5, -9.25, 0.7, 46, -10, 0.7, 45.75, -19, 0.7, 45.75, -19.75, 0.7, 46, -19.75, 0.7, 60.5, -9.25, 0.7, 60.5, -19.25, 0.7, 42.25, -19.25, 0.7, 41.5, -20.75, 0.7, 41.5, -21.25, 0.7, 42.5, -21.25, 0.7, 43.25, -19.75, 0.7, 43.5, -9.25, 0.7, 43.5, -7.75, 0.7, 43.25, -8.25, 0.7, 41.5, -9.75, 0.7, 41.5, -19.75, 5.9, 42.75, -19, 5.9, 42.5, -19, 5.9, 41.75, -21.25, 5.9, 41.75, -21.25, 5.9, 42.25, -9.75, 5.9, 42.75, -7.75, 5.9, 42.25, -7.75, 5.9, 41.75, -10, 5.9, 41.75, -5.75, 0.7, 44.75, -9.25, 0.7, 46, -9.25, 0.7, 60.5, 12.5, 0.7, 60.5, 12.25, 0.7, 41.75, 12.25, 0.7, 41.75, -6.5, 0.7, 41.75, -5.75, 0.7, 44.75)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(6, 5, 4), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(10, 7, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 25), PackedInt32Array(22, 25, 23), PackedInt32Array(23, 25, 24), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 29), PackedInt32Array(32, 31, 30), PackedInt32Array(35, 34, 33), PackedInt32Array(37, 36, 38), PackedInt32Array(38, 36, 39), PackedInt32Array(42, 41, 40), PackedInt32Array(44, 43, 45), PackedInt32Array(45, 43, 47), PackedInt32Array(45, 47, 46), PackedInt32Array(50, 49, 48), PackedInt32Array(54, 53, 51), PackedInt32Array(51, 53, 52), PackedInt32Array(55, 58, 56), PackedInt32Array(56, 58, 57), PackedInt32Array(62, 61, 59), PackedInt32Array(59, 61, 60), PackedInt32Array(65, 64, 63), PackedInt32Array(68, 67, 66), PackedInt32Array(69, 72, 70), PackedInt32Array(70, 72, 71), PackedInt32Array(74, 73, 75), PackedInt32Array(75, 73, 76), PackedInt32Array(79, 78, 77), PackedInt32Array(82, 81, 80), PackedInt32Array(85, 84, 83), PackedInt32Array(88, 87, 86), PackedInt32Array(90, 89, 91), PackedInt32Array(91, 89, 92), PackedInt32Array(95, 94, 93), PackedInt32Array(98, 97, 96), PackedInt32Array(102, 101, 99), PackedInt32Array(99, 101, 100), PackedInt32Array(105, 104, 103), PackedInt32Array(108, 107, 106), PackedInt32Array(111, 110, 109), PackedInt32Array(113, 112, 114), PackedInt32Array(114, 112, 115), PackedInt32Array(115, 112, 117), PackedInt32Array(115, 117, 116), PackedInt32Array(119, 118, 120), PackedInt32Array(120, 118, 124), PackedInt32Array(120, 124, 121), PackedInt32Array(121, 124, 122), PackedInt32Array(122, 124, 123), PackedInt32Array(126, 128, 127), PackedInt32Array(127, 128, 125), PackedInt32Array(129, 132, 130), PackedInt32Array(130, 132, 131), PackedInt32Array(136, 135, 133), PackedInt32Array(133, 135, 134), PackedInt32Array(138, 137, 139), PackedInt32Array(139, 137, 140), PackedInt32Array(142, 141, 143), PackedInt32Array(143, 141, 145), PackedInt32Array(143, 145, 144), PackedInt32Array(147, 146, 148), PackedInt32Array(148, 146, 149), PackedInt32Array(152, 151, 150), PackedInt32Array(154, 153, 155), PackedInt32Array(155, 153, 156), PackedInt32Array(159, 158, 157), PackedInt32Array(163, 162, 160), PackedInt32Array(160, 162, 161), PackedInt32Array(167, 166, 164), PackedInt32Array(164, 166, 165), PackedInt32Array(171, 170, 168), PackedInt32Array(168, 170, 169), PackedInt32Array(174, 173, 172), PackedInt32Array(177, 176, 175), PackedInt32Array(180, 179, 178), PackedInt32Array(182, 181, 183), PackedInt32Array(183, 181, 185), PackedInt32Array(183, 185, 184), PackedInt32Array(187, 186, 188), PackedInt32Array(188, 186, 189), PackedInt32Array(189, 186, 190), PackedInt32Array(190, 186, 191), PackedInt32Array(195, 194, 192), PackedInt32Array(192, 194, 193), PackedInt32Array(197, 196, 198), PackedInt32Array(198, 196, 199), PackedInt32Array(199, 196, 201), PackedInt32Array(199, 201, 200), PackedInt32Array(205, 204, 206), PackedInt32Array(206, 204, 207), PackedInt32Array(207, 204, 202), PackedInt32Array(202, 204, 203), PackedInt32Array(209, 208, 210), PackedInt32Array(210, 208, 211), PackedInt32Array(213, 212, 214), PackedInt32Array(214, 212, 216), PackedInt32Array(214, 216, 215), PackedInt32Array(218, 217, 219), PackedInt32Array(219, 217, 220), PackedInt32Array(222, 221, 223), PackedInt32Array(223, 221, 224), PackedInt32Array(224, 221, 225), PackedInt32Array(228, 227, 226)]
+cell_height = 0.4
+agent_height = 2.0
+agent_radius = 0.4
+agent_max_climb = 0.4
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_3172d"]
+vertices = PackedVector3Array(114.75, 0.9, 61.5, 114.5, 0.9, 41.5, 35.5, 0.9, 41.5, 35.25, 0.9, 61.5, -143.5, 0.9, 380.5, 155.5, 0.9, 380.5, 35.25, 0.9, 61.5, -43.25, 0.9, 61.5, -43.25, 0.9, 61.5, -43.5, 0.9, 41.5, -122.5, 0.9, 41.5, -122.75, 0.9, 61.5, 155.5, 0.9, 380.5, 114.75, 0.9, 61.5, 35.25, 0.9, 61.5, -122.75, 0.9, 61.5, -143.5, 0.9, 61.5, -143.5, 0.9, 380.5, 155.5, 0.9, 380.5, 155.5, 0.9, 61.5, 114.75, 0.9, 61.5, -43.25, 0.9, 61.5, -122.75, 0.9, 61.5, -143.5, 0.9, 380.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(14, 13, 12), PackedInt32Array(17, 16, 15), PackedInt32Array(20, 19, 18), PackedInt32Array(23, 22, 21)]
+cell_height = 0.5
+agent_height = 2.0
+
 [node name="Level_1" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -31,749 +46,982 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_lop7h")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 21, 2, 14)
 
-[node name="Bunker" type="Node3D" parent="."]
+[node name="Bunker" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_ma8h1")
+
+[node name="Bunker" type="Node3D" parent="Bunker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9, 0)
 
-[node name="BunkerGround" type="CSGBox3D" parent="Bunker"]
+[node name="BunkerGround" type="CSGBox3D" parent="Bunker/Bunker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(60, 1, 60)
 material = ExtResource("2_bc8xj")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/BunkerGround"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/Bunker/BunkerGround"]
 operation = 2
 
-[node name="LavaPit" type="CSGBox3D" parent="Bunker/BunkerGround/CSGCombiner3D"]
+[node name="LavaPit" type="CSGBox3D" parent="Bunker/Bunker/BunkerGround/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0.5, 1.5)
 size = Vector3(29, 1, 3)
 material = ExtResource("3_8a8er")
 
-[node name="OuterWalls" type="Node3D" parent="Bunker"]
+[node name="OuterWalls" type="Node3D" parent="Bunker/Bunker"]
 
-[node name="BunkerWall" type="CSGBox3D" parent="Bunker/OuterWalls"]
+[node name="BunkerWall" type="CSGBox3D" parent="Bunker/Bunker/OuterWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 3.5, 0)
 use_collision = true
 size = Vector3(1, 7, 60)
 material = ExtResource("3_8a8er")
 
-[node name="BunkerWall2" type="CSGBox3D" parent="Bunker/OuterWalls"]
+[node name="BunkerWall2" type="CSGBox3D" parent="Bunker/Bunker/OuterWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 3.5, 0)
 use_collision = true
 size = Vector3(1, 7, 60)
 material = ExtResource("3_8a8er")
 
-[node name="BunkerWall3" type="CSGBox3D" parent="Bunker/OuterWalls"]
+[node name="BunkerWall3" type="CSGBox3D" parent="Bunker/Bunker/OuterWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -29.5)
 use_collision = true
 size = Vector3(58, 7, 1)
 material = ExtResource("3_8a8er")
 
-[node name="BunkerWall4" type="CSGBox3D" parent="Bunker/OuterWalls"]
+[node name="BunkerWall4" type="CSGBox3D" parent="Bunker/Bunker/OuterWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 29.5)
 use_collision = true
 size = Vector3(58, 7, 1)
 material = ExtResource("3_8a8er")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/OuterWalls/BunkerWall4"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/Bunker/OuterWalls/BunkerWall4"]
 operation = 2
 
-[node name="Gate" type="CSGBox3D" parent="Bunker/OuterWalls/BunkerWall4/CSGCombiner3D"]
+[node name="Gate" type="CSGBox3D" parent="Bunker/Bunker/OuterWalls/BunkerWall4/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, -1, 0)
 size = Vector3(6, 5, 1)
 material = ExtResource("3_8a8er")
 
-[node name="JanitorDoor" type="CSGBox3D" parent="Bunker/OuterWalls/BunkerWall4/CSGCombiner3D"]
+[node name="JanitorDoor" type="CSGBox3D" parent="Bunker/Bunker/OuterWalls/BunkerWall4/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 1.01, 0)
 size = Vector3(3, 3.2, 1)
 material = ExtResource("3_8a8er")
 
-[node name="BunkerRoof" type="CSGBox3D" parent="Bunker"]
+[node name="BunkerRoof" type="CSGBox3D" parent="Bunker/Bunker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 use_collision = true
 size = Vector3(60, 1, 60)
 material = ExtResource("3_8a8er")
 
-[node name="JanitorsRoom" type="CSGBox3D" parent="Bunker"]
+[node name="JanitorsRoom" type="CSGBox3D" parent="Bunker/Bunker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 3.5, 14.5)
 use_collision = true
 size = Vector3(29, 7, 29)
 material = ExtResource("3_8a8er")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/JanitorsRoom"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/Bunker/JanitorsRoom"]
 operation = 2
 
-[node name="MainRoom" type="CSGBox3D" parent="Bunker/JanitorsRoom/CSGCombiner3D"]
+[node name="MainRoom" type="CSGBox3D" parent="Bunker/Bunker/JanitorsRoom/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)
 size = Vector3(20, 5, 20)
 material = ExtResource("3_8a8er")
 
-[node name="CorridorToBunker" type="CSGBox3D" parent="Bunker/JanitorsRoom/CSGCombiner3D"]
+[node name="CorridorToBunker" type="CSGBox3D" parent="Bunker/Bunker/JanitorsRoom/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 0, 0)
 size = Vector3(7, 3, 3)
 material = ExtResource("3_8a8er")
 
-[node name="CorridorToBunker2" type="CSGBox3D" parent="Bunker/JanitorsRoom/CSGCombiner3D"]
+[node name="CorridorToBunker2" type="CSGBox3D" parent="Bunker/Bunker/JanitorsRoom/CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.2, 0, -11)
 size = Vector3(7, 3, 3)
 material = ExtResource("3_8a8er")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Bunker/JanitorsRoom/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Bunker/Bunker/JanitorsRoom/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 8, 0.76, 13.83)
 size = Vector3(3, 3, 5)
 material = ExtResource("3_8a8er")
 
-[node name="BunkerFront" type="CSGBox3D" parent="Bunker"]
+[node name="BunkerFront" type="CSGBox3D" parent="Bunker/Bunker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 4.5, 35.5)
 use_collision = true
 size = Vector3(38, 10, 11)
 material = ExtResource("3_8a8er")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/BunkerFront"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/Bunker/BunkerFront"]
 operation = 2
 
-[node name="Entrence" type="CSGBox3D" parent="Bunker/BunkerFront/CSGCombiner3D"]
+[node name="Entrence" type="CSGBox3D" parent="Bunker/Bunker/BunkerFront/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, -9, -0.45, 3.016)
 size = Vector3(6, 5, 20)
 material = ExtResource("3_8a8er")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Bunker/BunkerFront/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Bunker/Bunker/BunkerFront/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 5, 4.8)
 size = Vector3(39, 1, 3)
 material = ExtResource("3_8a8er")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Bunker/BunkerFront/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bunker/Bunker/BunkerFront/CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 0.707107, 0.707107, 0, 0.707107, -0.707107, -1, -3.09086e-08, -3.09086e-08, 18.3, 5, 5)
 size = Vector3(39, 1, 3)
 material = ExtResource("3_8a8er")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Bunker/BunkerFront/CSGCombiner3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Bunker/Bunker/BunkerFront/CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, -0.707107, -0.707107, 0, 0.707107, -0.707107, 1, -3.09086e-08, -3.09086e-08, -18.3, 5, 5)
 size = Vector3(39, 1, 3)
 material = ExtResource("3_8a8er")
 
-[node name="Side" type="CSGBox3D" parent="Bunker/BunkerFront"]
+[node name="Side" type="CSGBox3D" parent="Bunker/Bunker/BunkerFront"]
 transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -15, -1, 7.5)
 size = Vector3(3, 7, 6)
 material = ExtResource("3_8a8er")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/BunkerFront/Side"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/Bunker/BunkerFront/Side"]
 operation = 2
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Bunker/BunkerFront/Side/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Bunker/Bunker/BunkerFront/Side/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0.173648, 3.02881)
 size = Vector3(3, 9, 3)
 material = ExtResource("3_8a8er")
 
-[node name="Side2" type="CSGBox3D" parent="Bunker/BunkerFront"]
+[node name="Side2" type="CSGBox3D" parent="Bunker/Bunker/BunkerFront"]
 transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, -3, -1, 7.5)
 size = Vector3(3, 7, 6)
 material = ExtResource("3_8a8er")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/BunkerFront/Side2"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Bunker/Bunker/BunkerFront/Side2"]
 operation = 2
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Bunker/BunkerFront/Side2/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Bunker/Bunker/BunkerFront/Side2/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0.173648, 3.02881)
 size = Vector3(3, 9, 3)
 material = ExtResource("3_8a8er")
 
-[node name="Interior" type="Node3D" parent="Bunker"]
+[node name="Interior" type="Node3D" parent="Bunker/Bunker"]
 
-[node name="Lamp" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 6.5, 8)
 
-[node name="Lamp2" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp2" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23, 6.5, 8)
 
-[node name="Lamp3" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp3" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 6.5, 19)
 
-[node name="Lamp4" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp4" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23, 6.5, 19)
 
-[node name="Lamp5" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp5" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 6.5, -7)
 
-[node name="Lamp6" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp6" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23, 6.5, -7)
 
-[node name="Lamp7" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp7" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 6.5, -21)
 
-[node name="Lamp8" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp8" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23, 6.5, -21)
 
-[node name="Lamp9" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp9" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21, 6.5, -7)
 
-[node name="Lamp15" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp15" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21, 6.5, 13)
 
-[node name="Lamp18" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp18" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21, 6.5, 19)
 
-[node name="Lamp13" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp13" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 6.5, -7)
 
-[node name="Lamp16" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp16" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 6.5, 12)
 
-[node name="Lamp17" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp17" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 6.5, 20)
 
-[node name="Lamp14" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp14" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 6.5, -21)
 
-[node name="Lamp10" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp10" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 6.5, -7)
 
-[node name="Lamp11" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp11" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21, 6.5, -21)
 
-[node name="Lamp12" parent="Bunker/Interior" instance=ExtResource("4_mhiyc")]
+[node name="Lamp12" parent="Bunker/Bunker/Interior" instance=ExtResource("4_mhiyc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 6.5, -21)
 
-[node name="Landscape" type="Node3D" parent="."]
+[node name="GrassArroundBunker" type="Node3D" parent="Bunker/Bunker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
-[node name="Grass20x20" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 51)
+[node name="Grass20x20" parent="Bunker/Bunker/GrassArroundBunker" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 51)
 
-[node name="Grass20x21" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 51)
+[node name="Grass20x23" parent="Bunker/Bunker/GrassArroundBunker" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 51)
 
-[node name="Grass20x22" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 51)
+[node name="Grass20x24" parent="Bunker/Bunker/GrassArroundBunker" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 51)
 
-[node name="Grass20x23" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 51)
+[node name="Grass20x21" parent="Bunker/Bunker/GrassArroundBunker" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, 51)
 
-[node name="Grass20x189" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 31)
+[node name="Grass20x22" parent="Bunker/Bunker/GrassArroundBunker" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, -34, 0, 35)
 
-[node name="Grass20x190" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 60, 0, 31)
+[node name="Grass20x25" parent="Bunker/Bunker/GrassArroundBunker" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, 6, 0, 35)
 
-[node name="Grass20x191" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 80, 0, 31)
+[node name="Grass20x26" parent="Bunker/Bunker/GrassArroundBunker" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, 26, 0, 35)
 
-[node name="Grass20x192" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 100, 0, 31)
+[node name="Outside" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+navigation_mesh = SubResource("NavigationMesh_3172d")
 
-[node name="Grass20x193" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 31)
+[node name="Grass20x25" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 71)
 
-[node name="Grass20x194" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -120, 0, 31)
+[node name="Grass20x26" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 71)
 
-[node name="Grass20x195" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -100, 0, 31)
+[node name="Grass20x27" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 71)
 
-[node name="Grass20x196" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -80, 0, 31)
+[node name="Grass20x28" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 71)
 
-[node name="Grass20x197" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -60, 0, 31)
+[node name="Grass20x29" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 71)
 
-[node name="Grass20x198" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 31)
+[node name="Grass20x30" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 71)
 
-[node name="Grass20x199" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -34, 0, 40)
+[node name="Grass20x31" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 71)
 
-[node name="Grass20x24" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 51)
+[node name="Grass20x32" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 71)
 
-[node name="Grass20x176" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 51)
+[node name="Grass20x33" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 71)
 
-[node name="Grass20x177" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 71)
+[node name="Grass20x34" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 71)
 
-[node name="Grass20x25" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 51)
+[node name="Grass20x35" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 71)
 
-[node name="Grass20x26" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 51)
+[node name="Grass20x36" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 71)
 
-[node name="Grass20x27" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 51)
+[node name="Grass20x37" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 71)
 
-[node name="Grass20x28" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 51)
+[node name="Grass20x38" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 71)
 
-[node name="Grass20x29" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 51)
+[node name="Grass20x39" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 71)
 
-[node name="Grass20x30" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 51)
+[node name="Grass20x40" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 91)
 
-[node name="Grass20x31" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 51)
+[node name="Grass20x41" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 91)
 
-[node name="Grass20x32" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 71)
+[node name="Grass20x42" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 91)
 
-[node name="Grass20x33" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 71)
+[node name="Grass20x43" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 91)
 
-[node name="Grass20x34" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 71)
+[node name="Grass20x44" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 91)
 
-[node name="Grass20x35" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 71)
+[node name="Grass20x45" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 91)
 
-[node name="Grass20x36" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 71)
+[node name="Grass20x46" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 91)
 
-[node name="Grass20x37" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 71)
+[node name="Grass20x47" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 91)
 
-[node name="Grass20x38" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 71)
+[node name="Grass20x48" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 91)
 
-[node name="Grass20x39" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 71)
+[node name="Grass20x49" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 91)
 
-[node name="Grass20x40" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 71)
+[node name="Grass20x50" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 91)
 
-[node name="Grass20x41" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 71)
+[node name="Grass20x51" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 91)
 
-[node name="Grass20x42" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 71)
+[node name="Grass20x52" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 91)
 
-[node name="Grass20x43" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 71)
+[node name="Grass20x53" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 91)
 
-[node name="Grass20x44" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 91)
+[node name="Grass20x54" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 91)
 
-[node name="Grass20x45" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 91)
+[node name="Grass20x55" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 111)
 
-[node name="Grass20x178" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 91)
+[node name="Grass20x56" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 111)
 
-[node name="Grass20x183" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 211)
+[node name="Grass20x57" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 111)
 
-[node name="Grass20x184" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 230)
+[node name="Grass20x58" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 111)
 
-[node name="Grass20x185" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 250)
+[node name="Grass20x59" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 111)
 
-[node name="Grass20x186" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 270)
+[node name="Grass20x60" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 111)
 
-[node name="Grass20x46" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 91)
+[node name="Grass20x61" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 111)
 
-[node name="Grass20x47" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 91)
+[node name="Grass20x62" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 111)
 
-[node name="Grass20x48" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 91)
+[node name="Grass20x63" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 111)
 
-[node name="Grass20x49" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 91)
+[node name="Grass20x64" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 111)
 
-[node name="Grass20x50" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 91)
+[node name="Grass20x65" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 111)
 
-[node name="Grass20x51" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 91)
+[node name="Grass20x66" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 111)
 
-[node name="Grass20x52" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 91)
+[node name="Grass20x67" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 111)
 
-[node name="Grass20x53" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 91)
+[node name="Grass20x68" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 111)
 
-[node name="Grass20x54" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 91)
+[node name="Grass20x69" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 111)
 
-[node name="Grass20x55" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 91)
+[node name="Grass20x70" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 131)
 
-[node name="Grass20x56" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 111)
+[node name="Grass20x71" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 131)
 
-[node name="Grass20x57" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 111)
+[node name="Grass20x72" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 131)
 
-[node name="Grass20x58" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 111)
+[node name="Grass20x73" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 131)
 
-[node name="Grass20x59" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 111)
+[node name="Grass20x74" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 131)
 
-[node name="Grass20x60" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 111)
+[node name="Grass20x75" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 131)
 
-[node name="Grass20x61" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 111)
+[node name="Grass20x76" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 131)
 
-[node name="Grass20x62" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 111)
+[node name="Grass20x77" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 131)
 
-[node name="Grass20x63" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 111)
+[node name="Grass20x78" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 131)
 
-[node name="Grass20x64" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 111)
+[node name="Grass20x79" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 131)
 
-[node name="Grass20x65" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 111)
+[node name="Grass20x80" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 131)
 
-[node name="Grass20x66" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 111)
+[node name="Grass20x81" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 131)
 
-[node name="Grass20x67" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 111)
+[node name="Grass20x82" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 131)
 
-[node name="Grass20x68" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 131)
+[node name="Grass20x83" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 131)
 
-[node name="Grass20x69" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 131)
+[node name="Grass20x84" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 131)
 
-[node name="Grass20x70" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 131)
+[node name="Grass20x85" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 151)
 
-[node name="Grass20x71" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 131)
+[node name="Grass20x86" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 151)
 
-[node name="Grass20x72" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 131)
+[node name="Grass20x87" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 151)
 
-[node name="Grass20x73" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-0.00033302, 5.88119e-06, 1, -0.00022413, 1, -5.93641e-06, -1, -0.000224132, -0.000333019, -100.003, -0.0022413, 131)
+[node name="Grass20x88" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 151)
 
-[node name="Grass20x74" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 131)
+[node name="Grass20x89" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 151)
 
-[node name="Grass20x75" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 131)
+[node name="Grass20x90" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 151)
 
-[node name="Grass20x179" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -120, 0, 131)
+[node name="Grass20x91" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 151)
 
-[node name="Grass20x76" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 131)
+[node name="Grass20x92" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 151)
 
-[node name="Grass20x77" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 131)
+[node name="Grass20x93" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 151)
 
-[node name="Grass20x78" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 131)
+[node name="Grass20x94" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 151)
 
-[node name="Grass20x79" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 131)
+[node name="Grass20x95" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 151)
 
-[node name="Grass20x80" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 151)
+[node name="Grass20x96" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 151)
 
-[node name="Grass20x81" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 151)
+[node name="Grass20x97" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 151)
 
-[node name="Grass20x82" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 151)
+[node name="Grass20x98" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 151)
 
-[node name="Grass20x83" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 151)
+[node name="Grass20x99" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 151)
 
-[node name="Grass20x84" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 151)
+[node name="Grass20x100" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 171)
 
-[node name="Grass20x85" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-0.00033302, 5.88119e-06, 1, -0.00022413, 1, -5.93641e-06, -1, -0.000224132, -0.000333019, -99.9967, 0.0022413, 151)
+[node name="Grass20x101" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 171)
 
-[node name="Grass20x86" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 151)
+[node name="Grass20x102" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 171)
 
-[node name="Grass20x87" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 151)
+[node name="Grass20x103" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 171)
 
-[node name="Grass20x88" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 151)
+[node name="Grass20x104" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 171)
 
-[node name="Grass20x89" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 151)
+[node name="Grass20x105" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 171)
 
-[node name="Grass20x90" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 151)
+[node name="Grass20x106" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 171)
 
-[node name="Grass20x91" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 151)
+[node name="Grass20x107" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 171)
 
-[node name="Grass20x92" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 171)
+[node name="Grass20x108" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 171)
 
-[node name="Grass20x93" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 171)
+[node name="Grass20x109" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 171)
 
-[node name="Grass20x94" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 171)
+[node name="Grass20x110" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 171)
 
-[node name="Grass20x95" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 171)
+[node name="Grass20x111" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 171)
 
-[node name="Grass20x96" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 171)
+[node name="Grass20x112" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 171)
 
-[node name="Grass20x97" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 171)
+[node name="Grass20x113" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 171)
 
-[node name="Grass20x98" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 171)
+[node name="Grass20x114" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 171)
 
-[node name="Grass20x99" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 171)
+[node name="Grass20x115" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 191)
 
-[node name="Grass20x100" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 171)
+[node name="Grass20x116" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 191)
 
-[node name="Grass20x101" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 171)
+[node name="Grass20x117" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 191)
 
-[node name="Grass20x102" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 171)
+[node name="Grass20x118" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 191)
 
-[node name="Grass20x103" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 171)
+[node name="Grass20x119" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 191)
 
-[node name="Grass20x104" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 191)
+[node name="Grass20x120" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 191)
 
-[node name="Grass20x105" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 191)
+[node name="Grass20x121" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 191)
 
-[node name="Grass20x106" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 191)
+[node name="Grass20x122" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 191)
 
-[node name="Grass20x107" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 191)
+[node name="Grass20x123" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 191)
 
-[node name="Grass20x108" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 191)
+[node name="Grass20x124" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 191)
 
-[node name="Grass20x109" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 191)
+[node name="Grass20x125" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 191)
 
-[node name="Grass20x110" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 191)
+[node name="Grass20x126" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 191)
 
-[node name="Grass20x111" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 191)
+[node name="Grass20x127" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 191)
 
-[node name="Grass20x112" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 191)
+[node name="Grass20x128" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 191)
 
-[node name="Grass20x113" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 191)
+[node name="Grass20x129" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 191)
 
-[node name="Grass20x180" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 191)
+[node name="Grass20x130" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 211)
 
-[node name="Grass20x181" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 151)
+[node name="Grass20x131" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 211)
 
-[node name="Grass20x182" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 290)
+[node name="Grass20x132" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 211)
 
-[node name="Grass20x187" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 171)
+[node name="Grass20x133" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 211)
 
-[node name="Grass20x188" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -120, 0, 111)
+[node name="Grass20x134" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 211)
 
-[node name="Grass20x114" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 191)
+[node name="Grass20x135" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 211)
 
-[node name="Grass20x115" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 191)
+[node name="Grass20x136" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 211)
 
-[node name="Grass20x116" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 211)
+[node name="Grass20x137" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 211)
 
-[node name="Grass20x117" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 211)
+[node name="Grass20x138" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 211)
 
-[node name="Grass20x118" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 211)
+[node name="Grass20x139" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 211)
 
-[node name="Grass20x119" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 211)
+[node name="Grass20x140" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 211)
 
-[node name="Grass20x120" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 211)
+[node name="Grass20x141" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 211)
 
-[node name="Grass20x121" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 211)
+[node name="Grass20x142" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 211)
 
-[node name="Grass20x122" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 211)
+[node name="Grass20x143" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 211)
 
-[node name="Grass20x123" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 211)
+[node name="Grass20x144" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 211)
 
-[node name="Grass20x124" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 211)
+[node name="Grass20x145" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 231)
 
-[node name="Grass20x125" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 211)
+[node name="Grass20x146" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 231)
 
-[node name="Grass20x126" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 211)
+[node name="Grass20x147" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 231)
 
-[node name="Grass20x127" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 211)
+[node name="Grass20x148" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 231)
 
-[node name="Grass20x128" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 231)
+[node name="Grass20x149" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 231)
 
-[node name="Grass20x129" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 231)
+[node name="Grass20x150" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 231)
 
-[node name="Grass20x130" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 231)
+[node name="Grass20x151" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 231)
 
-[node name="Grass20x131" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 231)
+[node name="Grass20x152" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 231)
 
-[node name="Grass20x132" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 231)
+[node name="Grass20x153" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 231)
 
-[node name="Grass20x133" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 231)
+[node name="Grass20x154" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 231)
 
-[node name="Grass20x134" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 231)
+[node name="Grass20x155" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 231)
 
-[node name="Grass20x135" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 231)
+[node name="Grass20x156" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 231)
 
-[node name="Grass20x136" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 231)
+[node name="Grass20x157" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 231)
 
-[node name="Grass20x137" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 231)
+[node name="Grass20x158" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 231)
 
-[node name="Grass20x138" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 231)
+[node name="Grass20x159" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 231)
 
-[node name="Grass20x139" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 231)
+[node name="Grass20x160" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 251)
 
-[node name="Grass20x140" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 251)
+[node name="Grass20x161" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 251)
 
-[node name="Grass20x141" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 251)
+[node name="Grass20x162" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 251)
 
-[node name="Grass20x142" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 251)
+[node name="Grass20x163" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 251)
 
-[node name="Grass20x143" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 251)
+[node name="Grass20x164" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 251)
 
-[node name="Grass20x144" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 251)
+[node name="Grass20x165" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 251)
 
-[node name="Grass20x145" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 251)
+[node name="Grass20x166" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 251)
 
-[node name="Grass20x146" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 251)
+[node name="Grass20x167" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 251)
 
-[node name="Grass20x147" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 251)
+[node name="Grass20x168" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 251)
 
-[node name="Grass20x148" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 251)
+[node name="Grass20x169" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 251)
 
-[node name="Grass20x149" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 251)
+[node name="Grass20x170" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 251)
 
-[node name="Grass20x150" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 251)
+[node name="Grass20x171" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 251)
 
-[node name="Grass20x151" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 251)
+[node name="Grass20x172" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 251)
 
-[node name="Grass20x152" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 271)
+[node name="Grass20x173" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 251)
 
-[node name="Grass20x153" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 271)
+[node name="Grass20x174" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 251)
 
-[node name="Grass20x154" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 271)
+[node name="Grass20x175" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 271)
 
-[node name="Grass20x155" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 40, 0, 271)
+[node name="Grass20x176" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 271)
 
-[node name="Grass20x156" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 271)
+[node name="Grass20x177" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 271)
 
-[node name="Grass20x157" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -100, 0, 271)
+[node name="Grass20x178" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 271)
 
-[node name="Grass20x158" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 271)
+[node name="Grass20x179" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 271)
 
-[node name="Grass20x159" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -40, 0, 271)
+[node name="Grass20x180" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 271)
 
-[node name="Grass20x160" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 271)
+[node name="Grass20x181" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 271)
 
-[node name="Grass20x161" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, 0, 271)
+[node name="Grass20x182" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 271)
 
-[node name="Grass20x162" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 271)
+[node name="Grass20x183" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 271)
 
-[node name="Grass20x163" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 120, 0, 271)
+[node name="Grass20x184" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 271)
 
-[node name="Grass20x164" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 291)
+[node name="Grass20x185" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 271)
 
-[node name="Grass20x165" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 0, 291)
+[node name="Grass20x186" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 271)
 
-[node name="Grass20x166" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 291)
+[node name="Grass20x187" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 271)
 
-[node name="Grass20x167" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 40, 0, 291)
+[node name="Grass20x188" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 271)
 
-[node name="Grass20x168" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -80, 0, 291)
+[node name="Grass20x189" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 271)
 
-[node name="Grass20x169" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -100, 0, 291)
+[node name="Grass20x190" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 291)
 
-[node name="Grass20x170" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60, 0, 291)
+[node name="Grass20x191" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 291)
 
-[node name="Grass20x171" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40, 0, 291)
+[node name="Grass20x192" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 291)
 
-[node name="Grass20x172" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 80, 0, 291)
+[node name="Grass20x193" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 291)
 
-[node name="Grass20x173" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 60, 0, 291)
+[node name="Grass20x194" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 291)
 
-[node name="Grass20x174" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, 0, 291)
+[node name="Grass20x195" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 291)
 
-[node name="Grass20x175" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 120, 0, 291)
+[node name="Grass20x196" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 291)
 
-[node name="GrassInForntOf JanitorExit" parent="Landscape" instance=ExtResource("4_sxjap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7, 20, 0, 34)
+[node name="Grass20x197" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 291)
+
+[node name="Grass20x198" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 291)
+
+[node name="Grass20x199" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 291)
+
+[node name="Grass20x200" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 291)
+
+[node name="Grass20x201" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 291)
+
+[node name="Grass20x202" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 291)
+
+[node name="Grass20x203" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 291)
+
+[node name="Grass20x204" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 291)
+
+[node name="Grass20x205" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 311)
+
+[node name="Grass20x206" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 311)
+
+[node name="Grass20x207" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 311)
+
+[node name="Grass20x208" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 311)
+
+[node name="Grass20x209" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 311)
+
+[node name="Grass20x210" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 311)
+
+[node name="Grass20x211" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 311)
+
+[node name="Grass20x212" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 311)
+
+[node name="Grass20x213" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 311)
+
+[node name="Grass20x214" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 311)
+
+[node name="Grass20x215" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 311)
+
+[node name="Grass20x216" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 311)
+
+[node name="Grass20x217" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 311)
+
+[node name="Grass20x218" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 311)
+
+[node name="Grass20x219" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 311)
+
+[node name="Grass20x220" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 331)
+
+[node name="Grass20x221" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 331)
+
+[node name="Grass20x222" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 331)
+
+[node name="Grass20x223" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 331)
+
+[node name="Grass20x224" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 331)
+
+[node name="Grass20x225" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 331)
+
+[node name="Grass20x226" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 331)
+
+[node name="Grass20x227" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 331)
+
+[node name="Grass20x228" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 331)
+
+[node name="Grass20x229" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 331)
+
+[node name="Grass20x230" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 331)
+
+[node name="Grass20x231" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 331)
+
+[node name="Grass20x232" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 331)
+
+[node name="Grass20x233" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 331)
+
+[node name="Grass20x234" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 331)
+
+[node name="Grass20x235" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 351)
+
+[node name="Grass20x236" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 351)
+
+[node name="Grass20x237" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 351)
+
+[node name="Grass20x238" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 351)
+
+[node name="Grass20x239" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 351)
+
+[node name="Grass20x240" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 351)
+
+[node name="Grass20x241" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 351)
+
+[node name="Grass20x242" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 351)
+
+[node name="Grass20x243" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 351)
+
+[node name="Grass20x244" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 351)
+
+[node name="Grass20x245" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 351)
+
+[node name="Grass20x246" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 351)
+
+[node name="Grass20x247" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 351)
+
+[node name="Grass20x248" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 351)
+
+[node name="Grass20x249" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 351)
+
+[node name="Grass20x250" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 371)
+
+[node name="Grass20x251" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -0.1, 371)
+
+[node name="Grass20x252" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, -0.1, 371)
+
+[node name="Grass20x253" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, -0.1, 371)
+
+[node name="Grass20x254" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -0.1, 371)
+
+[node name="Grass20x255" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94, -0.1, 371)
+
+[node name="Grass20x256" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, -0.1, 371)
+
+[node name="Grass20x257" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, -0.1, 371)
+
+[node name="Grass20x258" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -0.1, 371)
+
+[node name="Grass20x259" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, -0.1, 371)
+
+[node name="Grass20x260" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, -0.1, 371)
+
+[node name="Grass20x261" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, -0.1, 371)
+
+[node name="Grass20x262" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, -0.1, 371)
+
+[node name="Grass20x263" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, -0.1, 371)
+
+[node name="Grass20x264" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -0.1, 371)
+
+[node name="Grass20x20" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, -0.1, 51)
+
+[node name="Grass20x21" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, -0.1, 51)
+
+[node name="Grass20x22" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -0.1, 51)
+
+[node name="Grass20x23" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113, -0.1, 51)
+
+[node name="Grass20x24" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105, -0.1, 51)
+
+[node name="Grass20x265" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, -0.1, 51)
+
+[node name="Grass20x266" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -0.1, 51)
+
+[node name="Grass20x267" parent="Outside" instance=ExtResource("4_sxjap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.1, 51)
+
+[node name="Enemy" parent="." instance=ExtResource("2_hy6px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.3, 71)
