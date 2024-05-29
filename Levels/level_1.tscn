@@ -41,7 +41,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_lop7h")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 21, 2, 14)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 21, 2, 109)
 
 [node name="Door" parent="." instance=ExtResource("7_ny6uy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 2.4, 40.3)
@@ -1029,6 +1029,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -0.1, 51)
 
 [node name="Grass20x267" parent="Level/Node3D" instance=ExtResource("4_sxjap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.1, 51)
+
+[node name="RespawnPosition" type="Marker3D" parent="Level" groups=["respawn_position"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2, 13)
 
 [node name="Spawner" parent="." instance=ExtResource("9_4brsy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 75.5609)

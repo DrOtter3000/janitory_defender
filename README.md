@@ -18,6 +18,7 @@
 - Attack: Left Mouse Button
 - Change weapon: 1, 2
 - Interact: E
+- Teleport: T
 - Pause Menu: Esc
 
 ## Contributing

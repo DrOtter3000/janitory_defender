@@ -15,7 +15,9 @@ extends CharacterBody3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+var respawn_position: Vector3
 var mouse_motion := Vector2.ZERO
+var teleport_status := 0.0
 var hitpoints: int = max_hitpoints:
 	set(value):
 		if value < hitpoints:
@@ -33,7 +35,8 @@ var hitpoints: int = max_hitpoints:
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	respawn_position = get_tree().get_first_node_in_group("respawn_position").global_position
+	global_position = respawn_position
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("aim"):
@@ -54,7 +57,10 @@ func _process(delta: float) -> void:
 		weapon_camera_fov,
 		delta * 30.0
 		)
+
+
 func _physics_process(delta) -> void:
+	check_for_teleport()
 	# Allows player to turn
 	handle_camera_rotation()
 	
@@ -100,3 +106,12 @@ func handle_camera_rotation() -> void:
 		camera_pivot.rotation_degrees.x, -90.0, 90.0
 	)
 	mouse_motion = Vector2.ZERO
+
+
+func check_for_teleport() -> void:
+	if Input.is_action_pressed("teleport"):
+		teleport_status += 1
+	else:
+		teleport_status = 0
+	if teleport_status == 100:
+		global_position = respawn_position
