@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cc2d6vliruvm0"]
+[gd_scene load_steps=16 format=3 uid="uid://cc2d6vliruvm0"]
 
 [ext_resource type="PackedScene" uid="uid://5ovurbywxkcn" path="res://Player/player.tscn" id="1_lop7h"]
 [ext_resource type="Material" uid="uid://bccn2wthcw1as" path="res://Levels/Materials/bunker_ground.tres" id="2_bc8xj"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b7vxadoq6vfb5" path="res://Levels/door.tscn" id="7_ny6uy"]
 [ext_resource type="PackedScene" uid="uid://lhu63u7pddux" path="res://Enemies/spawner.tscn" id="9_4brsy"]
 [ext_resource type="PackedScene" uid="uid://bs0ot7b1sokw1" path="res://Levels/rus.tscn" id="9_t4rxy"]
+[ext_resource type="PackedScene" uid="uid://d1pk6lab7kpld" path="res://Pickups/scrap.tscn" id="10_3ekpy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aqdmy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1036,6 +1037,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2, 13)
 
 [node name="RUS" parent="Level" instance=ExtResource("9_t4rxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9, 1, 7)
+
+[node name="Scrap" parent="Level/RUS" instance=ExtResource("10_3ekpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 4)
 
 [node name="Spawner" parent="." instance=ExtResource("9_4brsy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 75.5609)

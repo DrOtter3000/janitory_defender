@@ -18,6 +18,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var respawn_position: Vector3
 var mouse_motion := Vector2.ZERO
 var teleport_status := 0.0
+var scrap: int = 0
 var hitpoints: int = max_hitpoints:
 	set(value):
 		if value < hitpoints:
@@ -41,6 +42,7 @@ func _ready() -> void:
 	global_position = respawn_position
 
 func _process(delta: float) -> void:
+	print(scrap)
 	if Input.is_action_pressed("aim"):
 		smooth_camera.fov = lerp(smooth_camera.fov, 
 		smooth_camera_fov * aim_multiplier, 
