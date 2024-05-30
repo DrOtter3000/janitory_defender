@@ -14,6 +14,11 @@ var ammo_storage := {
 	ammo_type.SMALL_BULLET: 60
 }
 
+var max_ammo := {
+	ammo_type.BULLET: 15,
+	ammo_type.SMALL_BULLET: 150
+}
+
 
 func has_ammo(type: ammo_type) -> bool:
 	return ammo_storage[type] > 0
@@ -31,5 +36,7 @@ func update_ammo_label(type: ammo_type) -> void:
 
 func add_ammo(type: ammo_type, amount: int) -> void:
 	ammo_storage[type] += amount
+	if ammo_storage[type] > max_ammo[type]:
+		ammo_storage[type] = max_ammo[type]
 	update_ammo_label(type)
 	
