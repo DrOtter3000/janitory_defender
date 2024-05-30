@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs0ot7b1sokw1"]
+
+[ext_resource type="Script" path="res://Levels/rus.gd" id="1_3pokq"]
+[ext_resource type="Material" uid="uid://bq3ngqp6fgt0d" path="res://Levels/Materials/orange_material.tres" id="1_5s7w6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1p2cb"]
+size = Vector3(3, 1, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rdspo"]
+material = ExtResource("1_5s7w6")
+size = Vector3(2, 1.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4glg6"]
+size = Vector3(2, 1.5, 1)
+
+[node name="RUS" type="Node3D"]
+script = ExtResource("1_3pokq")
+small_bullets = 1
+
+[node name="ReloadArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReloadArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+shape = SubResource("BoxShape3D_1p2cb")
+
+[node name="Terminal" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_rdspo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terminal"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/StaticBody3D"]
+shape = SubResource("BoxShape3D_4glg6")
+
+[node name="Ammotimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="ReloadArea" to="." method="_on_reload_area_body_entered"]
+[connection signal="body_exited" from="ReloadArea" to="." method="_on_reload_area_body_exited"]
+[connection signal="timeout" from="Ammotimer" to="." method="_on_ammotimer_timeout"]

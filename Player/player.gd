@@ -24,6 +24,8 @@ var hitpoints: int = max_hitpoints:
 			damage_animation_player.stop()
 			damage_animation_player.play("TakeDamage")
 		hitpoints = value
+		if hitpoints > max_hitpoints:
+			hitpoints = max_hitpoints
 		if hitpoints <= 0:
 			game_over_menu.game_over()
 
