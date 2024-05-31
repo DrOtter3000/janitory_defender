@@ -12,6 +12,8 @@ extends CharacterBody3D
 @onready var smooth_camera_fov := smooth_camera.fov
 @onready var weapon_camera: Camera3D = %WeaponCamera
 @onready var weapon_camera_fov := weapon_camera.fov
+@onready var lbl_health: Label = $MarginContainer/VBoxContainer/Lbl_Health
+@onready var healthbar: TextureProgressBar = $MarginContainer/VBoxContainer/Healthbar
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -21,14 +23,14 @@ var teleport_status := 0.0
 #var scrap: int = 0
 var hitpoints: int = max_hitpoints:
 	set(value):
-		if value < hitpoints:
+		if value < hitpoints and hitpoints <= max_hitpoints:
 			damage_animation_player.stop()
 			damage_animation_player.play("TakeDamage")
 		hitpoints = value
-		if hitpoints > max_hitpoints:
-			hitpoints = max_hitpoints
 		if hitpoints <= 0:
 			game_over_menu.game_over()
+		lbl_health.text = str(str(value) + " / " + str(max_hitpoints))
+		healthbar.value = value
 
 
 @onready var game_over_menu: Control = $GameOverMenu
@@ -37,11 +39,15 @@ var hitpoints: int = max_hitpoints:
 
 
 func _ready() -> void:
+	lbl_health.text = str(str(max_hitpoints) + " / " + str(max_hitpoints))
+	healthbar.value = max_hitpoints
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	respawn_position = get_tree().get_first_node_in_group("respawn_position").global_position
 	global_position = respawn_position
 
 func _process(delta: float) -> void:
+	if hitpoints > max_hitpoints:
+		hitpoints = max_hitpoints
 	if Input.is_action_pressed("aim"):
 		smooth_camera.fov = lerp(smooth_camera.fov, 
 		smooth_camera_fov * aim_multiplier, 

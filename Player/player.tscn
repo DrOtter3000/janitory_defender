@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://5ovurbywxkcn"]
+[gd_scene load_steps=18 format=3 uid="uid://5ovurbywxkcn"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_s7413"]
 [ext_resource type="Script" path="res://Player/SmoothCamera.gd" id="2_o3j1b"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://Player/AmmoHandler.gd" id="6_uttgl"]
 [ext_resource type="PackedScene" uid="uid://dbfl1wnxwpfx" path="res://Menus/game_over_menu.tscn" id="6_wdv1c"]
 [ext_resource type="Theme" uid="uid://dkanrxy7lrqmt" path="res://Assets/Themes/HUD_Theme.tres" id="10_nirc8"]
+[ext_resource type="FontFile" uid="uid://bhoy4867vq5kj" path="res://Assets/Fonts/Monoglyceride.ttf" id="11_m12rw"]
+[ext_resource type="Texture2D" uid="uid://dbdx5khrvf4vq" path="res://Player/Lifebar.png" id="11_vy7om"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_h57ha"]
 
@@ -209,3 +211,21 @@ theme = ExtResource("10_nirc8")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 text = "60"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Lbl_Health" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_m12rw")
+theme_override_font_sizes/font_size = 25
+text = "100/100"
+vertical_alignment = 1
+
+[node name="Healthbar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+value = 50.0
+texture_progress = ExtResource("11_vy7om")
