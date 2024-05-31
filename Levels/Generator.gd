@@ -11,5 +11,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	player.update_building_status()
 	if Gamestate.generator_health <= 0:
-		print("Game Over")
+		player.game_over()
 		queue_free()
