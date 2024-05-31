@@ -32,9 +32,6 @@ var hitpoints: int = max_hitpoints:
 			damage_animation_player.stop()
 			damage_animation_player.play("TakeDamage")
 		hitpoints = value
-		if hitpoints <= 0:
-			hitpoints = 1
-			global_position = respawn_position
 		lbl_health.text = str(str(value) + " / " + str(max_hitpoints))
 		healthbar.value = value
 
@@ -60,6 +57,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if hitpoints > max_hitpoints:
 		hitpoints = max_hitpoints
+	
+	if hitpoints < 0:
+		die()
+	
 	if Input.is_action_pressed("aim"):
 		smooth_camera.fov = lerp(smooth_camera.fov, 
 		smooth_camera_fov * aim_multiplier, 
@@ -78,6 +79,7 @@ func _process(delta: float) -> void:
 		weapon_camera_fov,
 		delta * 30.0
 		)
+	
 	check_for_teleport()
 
 
@@ -149,3 +151,8 @@ func update_building_status() -> void:
 
 func game_over() -> void:
 	game_over_menu.game_over()
+
+
+func die() -> void:
+	hitpoints = 1
+	global_position = respawn_position
