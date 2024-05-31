@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_btn_new_game_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 
 
 func _on_btn_quit_pressed() -> void:

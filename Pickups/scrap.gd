@@ -10,7 +10,6 @@ var about_to_die := false
 
 func _process(delta: float) -> void:
 	if about_to_die:
-		print("ouchie")
 		die()
 
 
