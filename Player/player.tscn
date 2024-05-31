@@ -217,6 +217,13 @@ layout_mode = 2
 size_flags_vertical = 8
 alignment = 1
 
+[node name="Lbl_Scrap" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_m12rw")
+theme_override_font_sizes/font_size = 25
+text = "Scrap: 0"
+vertical_alignment = 1
+
 [node name="Lbl_Health" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_m12rw")

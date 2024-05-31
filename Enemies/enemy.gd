@@ -14,10 +14,9 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var attack_range := 1.5
 @export var max_hitpoints := 100
 @export var damage := 20
-#@export var scrap_pickup: PackedScene
+@export var scrap_pickup: PackedScene
 @export var bullet_pickup: PackedScene
 @export var small_bullet_pickup: PackedScene
-@export var scrap_pickup = preload("res://Pickups/scrap.tscn")
 
 
 var player

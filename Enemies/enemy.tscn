@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0uskbfwt5p70"]
+[gd_scene load_steps=14 format=3 uid="uid://b0uskbfwt5p70"]
 
 [ext_resource type="Script" path="res://Enemies/enemy.gd" id="1_2ts3h"]
+[ext_resource type="PackedScene" uid="uid://d1pk6lab7kpld" path="res://Pickups/scrap.tscn" id="2_ulwrf"]
 [ext_resource type="PackedScene" uid="uid://bi0jp2a8df82m" path="res://Pickups/bullet_pickup.tscn" id="3_vls1k"]
 [ext_resource type="PackedScene" uid="uid://2vs8baybxrfh" path="res://Pickups/small_bullet_pickup.tscn" id="4_5xb3j"]
 
@@ -112,6 +113,7 @@ floor_snap_length = 0.5
 script = ExtResource("1_2ts3h")
 speed = 5.0
 damage = 15
+scrap_pickup = ExtResource("2_ulwrf")
 bullet_pickup = ExtResource("3_vls1k")
 small_bullet_pickup = ExtResource("4_5xb3j")
 

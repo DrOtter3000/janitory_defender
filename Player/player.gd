@@ -14,13 +14,17 @@ extends CharacterBody3D
 @onready var weapon_camera_fov := weapon_camera.fov
 @onready var lbl_health: Label = $MarginContainer/VBoxContainer/Lbl_Health
 @onready var healthbar: TextureProgressBar = $MarginContainer/VBoxContainer/Healthbar
+@onready var lbl_scrap: Label = $MarginContainer/VBoxContainer/Lbl_Scrap
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var respawn_position: Vector3
 var mouse_motion := Vector2.ZERO
 var teleport_status := 0.0
-var scrap: int = 0
+var scrap: int = 0:
+	set(value):
+		scrap = value
+		lbl_scrap.text = str("Scrap: " + str(scrap))
 var hitpoints: int = max_hitpoints:
 	set(value):
 		if value < hitpoints and hitpoints <= max_hitpoints:
