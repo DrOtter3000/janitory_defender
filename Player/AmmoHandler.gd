@@ -39,4 +39,8 @@ func add_ammo(type: ammo_type, amount: int) -> void:
 	if ammo_storage[type] > max_ammo[type]:
 		ammo_storage[type] = max_ammo[type]
 	update_ammo_label(type)
-	
+
+
+func restock_ammo() -> void:
+	pass
+

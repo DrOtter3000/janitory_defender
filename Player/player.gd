@@ -40,12 +40,10 @@ var hitpoints: int = max_hitpoints:
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var damage_animation_player: AnimationPlayer = $DamageTexture/DamageAnimationPlayer
 var max_health_door := 0
-var max_health_generator := 0
 
 
 func _ready() -> void:
-	max_health_door = Gamestate.door_health
-	max_health_generator = Gamestate.generator_health
+	ammo_handler.restock_ammo()
 	lbl_health.text = str(str(max_hitpoints) + " / " + str(max_hitpoints))
 	healthbar.value = max_hitpoints
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -144,9 +142,9 @@ func check_for_teleport() -> void:
 func update_building_status() -> void:
 	if Gamestate.door_health > 0:
 		lbl_building_status.text = str("Status Door: " + 
-		str(Gamestate.door_health) + " / " + str(max_health_door))
+		str(Gamestate.door_health) + " / " + str(Gamestate.max_door_health))
 	else:
-		lbl_building_status.text = str("Status Generator: " + str(Gamestate.generator_health) + " / " + str(max_health_generator))
+		lbl_building_status.text = str("Status Generator: " + str(Gamestate.generator_health) + " / " + str(Gamestate.max_generator_health))
  
 
 func game_over() -> void:

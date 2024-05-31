@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://cc2d6vliruvm0"]
+[gd_scene load_steps=23 format=3 uid="uid://cc2d6vliruvm0"]
 
+[ext_resource type="Script" path="res://Levels/level_1.gd" id="1_abkpr"]
 [ext_resource type="PackedScene" uid="uid://5ovurbywxkcn" path="res://Player/player.tscn" id="1_lop7h"]
 [ext_resource type="Material" uid="uid://bccn2wthcw1as" path="res://Levels/Materials/bunker_ground.tres" id="2_bc8xj"]
 [ext_resource type="Material" uid="uid://c1at675a3yymd" path="res://Levels/Materials/bunker_wall.tres" id="3_8a8er"]
@@ -52,6 +53,7 @@ size = Vector3(20, 20, 20)
 size = Vector3(5, 4, 5)
 
 [node name="Level_1" type="Node3D"]
+script = ExtResource("1_abkpr")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hayvl")
