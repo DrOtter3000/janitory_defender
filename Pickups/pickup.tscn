@@ -54,6 +54,7 @@ shader = ExtResource("2_hyf8h")
 [sub_resource type="SphereMesh" id="SphereMesh_cj0fy"]
 
 [node name="Pickup" type="Area3D"]
+top_level = true
 script = ExtResource("1_6aowg")
 
 [node name="AmmoMesh" type="MeshInstance3D" parent="."]

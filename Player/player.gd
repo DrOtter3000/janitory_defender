@@ -20,7 +20,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var respawn_position: Vector3
 var mouse_motion := Vector2.ZERO
 var teleport_status := 0.0
-#var scrap: int = 0
+var scrap: int = 0
 var hitpoints: int = max_hitpoints:
 	set(value):
 		if value < hitpoints and hitpoints <= max_hitpoints:
