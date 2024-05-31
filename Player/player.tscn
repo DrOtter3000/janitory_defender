@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://5ovurbywxkcn"]
+[gd_scene load_steps=19 format=3 uid="uid://5ovurbywxkcn"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_s7413"]
 [ext_resource type="Script" path="res://Player/SmoothCamera.gd" id="2_o3j1b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://xpvcsasfaw6f" path="res://Player/damage.png" id="5_mdim5"]
 [ext_resource type="Script" path="res://Player/AmmoHandler.gd" id="6_uttgl"]
 [ext_resource type="PackedScene" uid="uid://dbfl1wnxwpfx" path="res://Menus/game_over_menu.tscn" id="6_wdv1c"]
+[ext_resource type="FontFile" uid="uid://cw6skdta8vuqn" path="res://Assets/Fonts/MonoglycerideBold.ttf" id="10_kftgm"]
 [ext_resource type="Theme" uid="uid://dkanrxy7lrqmt" path="res://Assets/Themes/HUD_Theme.tres" id="10_nirc8"]
 [ext_resource type="FontFile" uid="uid://bhoy4867vq5kj" path="res://Assets/Fonts/Monoglyceride.ttf" id="11_m12rw"]
 [ext_resource type="Texture2D" uid="uid://dbdx5khrvf4vq" path="res://Player/Lifebar.png" id="11_vy7om"]
@@ -202,6 +203,16 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
+
+[node name="Lbl_BuildingStatus" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("10_kftgm")
+theme_override_font_sizes/font_size = 30
+text = "Status Gate: 500/1000"
+horizontal_alignment = 1
 
 [node name="Lbl_Ammo" type="Label" parent="MarginContainer"]
 layout_mode = 2

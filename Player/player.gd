@@ -15,6 +15,7 @@ extends CharacterBody3D
 @onready var lbl_health: Label = $MarginContainer/VBoxContainer/Lbl_Health
 @onready var healthbar: TextureProgressBar = $MarginContainer/VBoxContainer/Healthbar
 @onready var lbl_scrap: Label = $MarginContainer/VBoxContainer/Lbl_Scrap
+@onready var lbl_building_status: Label = $MarginContainer/Lbl_BuildingStatus
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -32,7 +33,8 @@ var hitpoints: int = max_hitpoints:
 			damage_animation_player.play("TakeDamage")
 		hitpoints = value
 		if hitpoints <= 0:
-			game_over_menu.game_over()
+			hitpoints = 1
+			global_position = respawn_position
 		lbl_health.text = str(str(value) + " / " + str(max_hitpoints))
 		healthbar.value = value
 
@@ -40,14 +42,20 @@ var hitpoints: int = max_hitpoints:
 @onready var game_over_menu: Control = $GameOverMenu
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var damage_animation_player: AnimationPlayer = $DamageTexture/DamageAnimationPlayer
+var max_health_door := 0
+var max_health_generator := 0
 
 
 func _ready() -> void:
+	max_health_door = Gamestate.door_health
+	max_health_generator = Gamestate.generator_health
 	lbl_health.text = str(str(max_hitpoints) + " / " + str(max_hitpoints))
 	healthbar.value = max_hitpoints
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	respawn_position = get_tree().get_first_node_in_group("respawn_position").global_position
 	global_position = respawn_position
+	update_building_status()
+
 
 func _process(delta: float) -> void:
 	if hitpoints > max_hitpoints:
@@ -129,3 +137,15 @@ func check_for_teleport() -> void:
 		teleport_status = 0
 	if teleport_status == 100:
 		global_position = respawn_position
+
+
+func update_building_status() -> void:
+	if Gamestate.door_health > 0:
+		lbl_building_status.text = str("Status Door: " + 
+		str(Gamestate.door_health) + " / " + str(max_health_door))
+	else:
+		lbl_building_status.text = str("Status Generator: " + str(Gamestate.generator_health) + " / " + str(max_health_generator))
+ 
+
+func game_over() -> void:
+	game_over_menu.game_over()
