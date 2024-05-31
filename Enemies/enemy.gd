@@ -106,5 +106,6 @@ func spawn_pickup():
 		pickup = scrap_pickup.instantiate()
 	get_tree().get_root().add_child(pickup)
 	pickup.global_position = global_position
+	pickup.global_position.y -= 0.5
 	
 	
