@@ -18,7 +18,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var respawn_position: Vector3
 var mouse_motion := Vector2.ZERO
 var teleport_status := 0.0
-var scrap: int = 0
+#var scrap: int = 0
 var hitpoints: int = max_hitpoints:
 	set(value):
 		if value < hitpoints:
@@ -42,7 +42,6 @@ func _ready() -> void:
 	global_position = respawn_position
 
 func _process(delta: float) -> void:
-	print(scrap)
 	if Input.is_action_pressed("aim"):
 		smooth_camera.fov = lerp(smooth_camera.fov, 
 		smooth_camera_fov * aim_multiplier, 
@@ -61,10 +60,10 @@ func _process(delta: float) -> void:
 		weapon_camera_fov,
 		delta * 30.0
 		)
+	check_for_teleport()
 
 
 func _physics_process(delta) -> void:
-	check_for_teleport()
 	# Allows player to turn
 	handle_camera_rotation()
 	
@@ -78,7 +77,7 @@ func _physics_process(delta) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = sqrt(jump_height * 2.0 * gravity)
-
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
@@ -115,6 +114,7 @@ func handle_camera_rotation() -> void:
 func check_for_teleport() -> void:
 	if Input.is_action_pressed("teleport"):
 		teleport_status += 1
+		print(teleport_status)
 	else:
 		teleport_status = 0
 	if teleport_status == 100:

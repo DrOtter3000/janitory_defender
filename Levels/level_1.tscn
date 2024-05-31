@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cc2d6vliruvm0"]
+[gd_scene load_steps=22 format=3 uid="uid://cc2d6vliruvm0"]
 
 [ext_resource type="PackedScene" uid="uid://5ovurbywxkcn" path="res://Player/player.tscn" id="1_lop7h"]
 [ext_resource type="Material" uid="uid://bccn2wthcw1as" path="res://Levels/Materials/bunker_ground.tres" id="2_bc8xj"]
@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cck6avy8xref7" path="res://Levels/Assets/Grass20x20.glb" id="4_sxjap"]
 [ext_resource type="PackedScene" uid="uid://ne2kcei0btg7" path="res://Levels/bridge.tscn" id="6_en5m8"]
 [ext_resource type="PackedScene" uid="uid://b7vxadoq6vfb5" path="res://Levels/door.tscn" id="7_ny6uy"]
-[ext_resource type="PackedScene" uid="uid://lhu63u7pddux" path="res://Enemies/spawner.tscn" id="9_4brsy"]
-[ext_resource type="PackedScene" uid="uid://bs0ot7b1sokw1" path="res://Levels/rus.tscn" id="9_t4rxy"]
-[ext_resource type="PackedScene" uid="uid://d1pk6lab7kpld" path="res://Pickups/scrap.tscn" id="10_3ekpy"]
+[ext_resource type="PackedScene" uid="uid://lhu63u7pddux" path="res://Enemies/spawner.tscn" id="9_3mmkn"]
+[ext_resource type="PackedScene" uid="uid://bs0ot7b1sokw1" path="res://Levels/rus.tscn" id="10_isycc"]
+[ext_resource type="PackedScene" uid="uid://clpan2dlslo5c" path="res://Levels/Assets/Hills.glb" id="11_cqqvw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aqdmy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -33,6 +33,24 @@ agent_height = 2.0
 agent_radius = 0.4
 agent_max_climb = 0.4
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5nr2e"]
+size = Vector3(80, 5, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jxebp"]
+size = Vector3(320, 9, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_juldk"]
+size = Vector3(41, 5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b67ng"]
+size = Vector3(79, 7, 11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_abvd4"]
+size = Vector3(20, 20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_im4u0"]
+size = Vector3(5, 4, 5)
+
 [node name="Level_1" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -47,6 +65,153 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 
 [node name="Door" parent="." instance=ExtResource("7_ny6uy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 2.4, 40.3)
+
+[node name="EnvironmentOuterLevel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
+
+[node name="HillsAtBorder" type="Node3D" parent="EnvironmentOuterLevel"]
+
+[node name="Hills" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 1, 384)
+
+[node name="Hills2" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 85, 1, 384)
+
+[node name="Hills3" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 181, 1, 384)
+
+[node name="Hills4" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106, 1, 384)
+
+[node name="Hills5" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 1, 341)
+
+[node name="Hills6" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 1, 249)
+
+[node name="Hills7" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 1, 155)
+
+[node name="Hills8" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 1, 67)
+
+[node name="Hills9" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -112, 1, 33)
+
+[node name="Hills10" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -95, 1, 33)
+
+[node name="Hills11" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -172, 1, 54)
+
+[node name="Hills12" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -172, 1, 44)
+
+[node name="Hills13" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 79, 1, 24)
+
+[node name="Hills14" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 85.5, 1, 34)
+
+[node name="Hills20" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 164.5, 1, 41)
+
+[node name="Hills21" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 164.5, 1, 54)
+
+[node name="Hills22" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 120.5, 1, 4)
+
+[node name="Hills15" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 161.5, 1, 34)
+
+[node name="Hills16" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 161.5, 1, 129)
+
+[node name="Hills17" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 161.5, 1, 223)
+
+[node name="Hills18" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 161.5, 1, 300)
+
+[node name="Hills19" parent="EnvironmentOuterLevel/HillsAtBorder" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 161.5, 1, 370)
+
+[node name="HillsFarAway" type="Node3D" parent="EnvironmentOuterLevel"]
+
+[node name="Hills" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -162, 0, 34)
+
+[node name="Hills2" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -162, 0, 171)
+
+[node name="Hills3" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -162, 0, 303)
+
+[node name="Hills4" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -162, 0, 366)
+
+[node name="Hills5" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -97, 0, 398)
+
+[node name="Hills6" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 2, 0, 398)
+
+[node name="Hills7" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 120, 0, 398)
+
+[node name="Hills8" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 174, 0, 398)
+
+[node name="Hills9" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 174, 0, 267)
+
+[node name="Hills10" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 174, 0, 133)
+
+[node name="Hills11" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 174, 0, -1)
+
+[node name="Hills12" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1.96701e-07, 0, -1.5, 0, 1.5, 0, 1.5, 0, 1.96701e-07, 101, 0, 14)
+
+[node name="Hills13" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(1.96701e-07, 0, -1.5, 0, 1.5, 0, 1.5, 0, 1.96701e-07, -104, 0, 20)
+
+[node name="Hills14" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, -38, 0, -45)
+
+[node name="Hills15" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -5, 0, -45)
+
+[node name="Hills16" parent="EnvironmentOuterLevel/HillsFarAway" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, 38, 0, -45)
+
+[node name="OuterHills" type="Node3D" parent="EnvironmentOuterLevel"]
+
+[node name="Hills" parent="EnvironmentOuterLevel/OuterHills" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(2.82843, 0, -2.82843, 0, 4, 0, 2.82843, 0, 2.82843, -233, 0, 2)
+
+[node name="Hills2" parent="EnvironmentOuterLevel/OuterHills" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -278, 0, 193)
+
+[node name="Hills3" parent="EnvironmentOuterLevel/OuterHills" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(3.4641, 0, 2, 0, 4, 0, -2, 0, 3.4641, -199, 0, 490)
+
+[node name="Hills4" parent="EnvironmentOuterLevel/OuterHills" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-2.38419e-07, 0, 4, 0, 4, 0, -4, 0, -2.38419e-07, -26, 0, 490)
+
+[node name="Hills5" parent="EnvironmentOuterLevel/OuterHills" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-2.82843, 0, 2.82843, 0, 4, 0, -2.82843, 0, -2.82843, 227, 0, 490)
+
+[node name="Hills6" parent="EnvironmentOuterLevel/OuterHills" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-4, 0, -2.38419e-07, 0, 4, 0, 2.38419e-07, 0, -4, 337, 0, 288)
+
+[node name="Hills7" parent="EnvironmentOuterLevel/OuterHills" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(-3.4641, 0, -2, 0, 4, 0, 2, 0, -3.4641, 240, 0, -22)
+
+[node name="Hills8" parent="EnvironmentOuterLevel/OuterHills" instance=ExtResource("11_cqqvw")]
+transform = Transform3D(5.96046e-07, 0, -4, 0, 4, 0, 4, 0, 5.96046e-07, 15, 0, -152)
 
 [node name="Level" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ma8h1")
@@ -1035,11 +1200,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.1, 51)
 [node name="RespawnPosition" type="Marker3D" parent="Level" groups=["respawn_position"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2, 13)
 
-[node name="RUS" parent="Level" instance=ExtResource("9_t4rxy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9, 1, 7)
+[node name="Spawner" parent="Level" instance=ExtResource("9_3mmkn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 91)
 
-[node name="Scrap" parent="Level/RUS" instance=ExtResource("10_3ekpy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 4)
+[node name="RUS" parent="Level" instance=ExtResource("10_isycc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 7)
 
-[node name="Spawner" parent="." instance=ExtResource("9_4brsy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 75.5609)
+[node name="LevelBorder" type="MeshInstance3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LevelBorder"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 31.5)
+shape = SubResource("BoxShape3D_5nr2e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 379)
+shape = SubResource("BoxShape3D_jxebp")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -144, 2, 220)
+shape = SubResource("BoxShape3D_jxebp")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 156, 2, 217)
+shape = SubResource("BoxShape3D_jxebp")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.5, 1, 50)
+shape = SubResource("BoxShape3D_juldk")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.5, 3, 34)
+shape = SubResource("BoxShape3D_b67ng")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.5, 3, 24)
+shape = SubResource("BoxShape3D_b67ng")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132, 0, 49)
+shape = SubResource("BoxShape3D_abvd4")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.5, 27)
+shape = SubResource("BoxShape3D_im4u0")

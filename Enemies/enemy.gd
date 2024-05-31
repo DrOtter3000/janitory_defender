@@ -14,6 +14,10 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var attack_range := 1.5
 @export var max_hitpoints := 100
 @export var damage := 20
+@export var scrap_pickup: PackedScene
+@export var bullet_pickup: PackedScene
+@export var small_bullet_pickup: PackedScene
+
 
 var player
 var door
@@ -24,6 +28,7 @@ var hitpoints: int = max_hitpoints:
 	set(value):
 		hitpoints = value
 		if hitpoints <= 0:
+			spawn_pickup()
 			queue_free()
 		provoked = true
 
@@ -88,3 +93,18 @@ func damage_building() -> void:
 		Gamestate.door_health -= damage
 	else:
 		Gamestate.generator_health -= damage
+
+
+func spawn_pickup():
+	var pickup_selector = randi_range(1, 5)
+	print(pickup_selector)
+	var pickup
+	if pickup_selector == 1:
+		pickup = bullet_pickup.instantiate()
+	elif pickup_selector == 2:
+		pickup = small_bullet_pickup.instantiate()
+	else:
+		pickup = scrap_pickup.instantiate()
+	add_child(pickup)
+	
+	
