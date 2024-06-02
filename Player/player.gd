@@ -15,7 +15,9 @@ extends CharacterBody3D
 @onready var lbl_health: Label = $MarginContainer/VBoxContainer/Lbl_Health
 @onready var healthbar: TextureProgressBar = $MarginContainer/VBoxContainer/Healthbar
 @onready var lbl_scrap: Label = $MarginContainer/VBoxContainer/Lbl_Scrap
-@onready var lbl_building_status: Label = $MarginContainer/Lbl_BuildingStatus
+@onready var lbl_building_status: Label = $MarginContainer/VBoxContainer2/Lbl_BuildingStatus
+@onready var lbl_countdown: Label = $MarginContainer/VBoxContainer2/Lbl_Countdown
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -154,3 +156,8 @@ func game_over() -> void:
 func die() -> void:
 	hitpoints = 1
 	global_position = respawn_position
+
+
+func update_countdown(value: String) -> void:
+	lbl_countdown.text = value
+

@@ -3,10 +3,11 @@ extends Node3D
 
 @export var enemy_spawner: PackedScene
 @onready var next_wave_timer: Timer = $NextWaveTimer
-
+var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
 	Gamestate.score = 0
 	Gamestate.door_health = Gamestate.max_door_health
 	Gamestate.generator_health = Gamestate.max_generator_health
@@ -26,6 +27,7 @@ func start_spawner(pos_x: int, pos_z: int) -> void:
 
 
 func start_wave() -> void:
+	player.update_countdown(str(""))
 	Gamestate.drop_finished = false
 	match Gamestate.wave:
 		1:
@@ -46,7 +48,7 @@ func prepare_for_next_level() -> void:
 		if next_wave_timer.is_stopped():
 			next_wave_timer.start()
 		else:
-			print(int(next_wave_timer.time_left))
+			player.update_countdown(str("Next Wave starts in: " + str(int(next_wave_timer.time_left)) + " seconds"))
 	else:
 		print("Winner")
 
