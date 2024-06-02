@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://lhu63u7pddux"]
+[gd_scene load_steps=10 format=3 uid="uid://lhu63u7pddux"]
 
 [ext_resource type="Material" uid="uid://bq3ngqp6fgt0d" path="res://Levels/Materials/orange_material.tres" id="1_ax4o8"]
 [ext_resource type="Script" path="res://Enemies/spawner.gd" id="1_dcsj1"]
 [ext_resource type="PackedScene" uid="uid://b0uskbfwt5p70" path="res://Enemies/enemy.tscn" id="2_e81ml"]
+[ext_resource type="PackedScene" uid="uid://wphlw2x63367" path="res://Enemies/Ship.glb" id="3_70dr6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pfxt2"]
 material = ExtResource("1_ax4o8")
@@ -33,6 +34,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ship:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 100, 1000)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ship:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_6ni84"]
@@ -79,6 +104,30 @@ tracks/2/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ship:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.9, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 90, 45), Vector3(0, 100, 1000)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ship:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_t06ev"]
 resource_name = "incomming"
@@ -121,6 +170,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ship:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 9, 14),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 100, 1000), Vector3(0, 100, 100), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ship:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 9, 13.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, 1.5708, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vklhk"]
 _data = {
@@ -133,8 +206,12 @@ _data = {
 script = ExtResource("1_dcsj1")
 enemy = ExtResource("2_e81ml")
 
+[node name="Ship" parent="." instance=ExtResource("3_70dr6")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 100, 1000)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_pfxt2")
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]

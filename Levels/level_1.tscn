@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cc2d6vliruvm0"]
+[gd_scene load_steps=23 format=3 uid="uid://cc2d6vliruvm0"]
 
 [ext_resource type="Script" path="res://Levels/level_1.gd" id="1_abkpr"]
 [ext_resource type="PackedScene" uid="uid://5ovurbywxkcn" path="res://Player/player.tscn" id="1_lop7h"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://lhu63u7pddux" path="res://Enemies/spawner.tscn" id="9_3mmkn"]
 [ext_resource type="PackedScene" uid="uid://bs0ot7b1sokw1" path="res://Levels/rus.tscn" id="10_isycc"]
 [ext_resource type="PackedScene" uid="uid://clpan2dlslo5c" path="res://Levels/Assets/Hills.glb" id="11_cqqvw"]
-[ext_resource type="PackedScene" uid="uid://b0uskbfwt5p70" path="res://Enemies/enemy.tscn" id="13_orokx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aqdmy"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1250,8 +1249,5 @@ shape = SubResource("BoxShape3D_im4u0")
 [node name="NextWaveTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
-
-[node name="Enemy" parent="." instance=ExtResource("13_orokx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 76)
 
 [connection signal="timeout" from="NextWaveTimer" to="." method="_on_next_wave_timer_timeout"]
