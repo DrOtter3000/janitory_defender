@@ -68,7 +68,8 @@ func _physics_process(delta: float) -> void:
 		provoked = true
 	
 	if direction:
-		look_at_target(direction)
+		if is_on_floor():
+			look_at_target(direction)
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 	else:
