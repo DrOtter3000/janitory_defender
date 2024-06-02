@@ -2,6 +2,7 @@ extends Node3D
 
 
 @export var enemy_spawner: PackedScene
+@onready var next_wave_timer: Timer = $NextWaveTimer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,25 +14,43 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	pass
+	if not Gamestate.enemies_on_field:
+		if Gamestate.drop_finished:
+			prepare_for_next_level()
+
 
 func start_spawner(pos_x: int, pos_z: int) -> void:
 	var spawner = enemy_spawner.instantiate()
 	add_child(spawner)
-	spawner.global_position = Vector3(0, 6, pos_z)
+	spawner.global_position = Vector3(pos_x, 6, pos_z)
 
 
 func start_wave() -> void:
+	Gamestate.drop_finished = false
 	match Gamestate.wave:
 		1:
-			start_spawner(0, 300)
+			start_spawner(0, 150)
 			
 		2:
-			start_spawner(100, 300)
-			start_spawner(-100, 300)
+			start_spawner(100, 150)
+			start_spawner(-100, 150)
 			
 		_:
-			start_spawner(0, 300)
-			start_spawner(100, 300)
-			start_spawner(-100, 300)
-		
+			start_spawner(0, 150)
+			start_spawner(100, 150)
+			start_spawner(-100, 150)
+
+
+func prepare_for_next_level() -> void:
+	if Gamestate.wave < 10:
+		if next_wave_timer.is_stopped():
+			next_wave_timer.start()
+		else:
+			print(int(next_wave_timer.time_left))
+	else:
+		print("Winner")
+
+
+func _on_next_wave_timer_timeout() -> void:
+	Gamestate.wave += 1
+	start_wave()

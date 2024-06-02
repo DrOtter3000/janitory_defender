@@ -27,3 +27,7 @@ func _on_enemy_spawn_timer_timeout() -> void:
 
 func drop_enemies() -> void:
 	enemy_spawn_timer.start()
+
+
+func exited() -> void:
+	Gamestate.drop_finished = true

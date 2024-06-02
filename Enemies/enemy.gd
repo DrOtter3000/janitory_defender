@@ -29,7 +29,7 @@ var hitpoints: int = max_hitpoints:
 		hitpoints = value
 		if hitpoints <= 0:
 			spawn_pickup()
-			queue_free()
+			die()
 		provoked = true
 
 
@@ -107,5 +107,8 @@ func spawn_pickup():
 	get_tree().get_root().add_child(pickup)
 	pickup.global_position = global_position
 	pickup.global_position.y -= 0.5
-	
-	
+
+
+func die() -> void:
+	Gamestate.enemies_on_field -= 1
+	queue_free()

@@ -10,4 +10,5 @@ var generator_health := 1000
 
 var wave := 1
 
+var drop_finished := false
 var enemies_on_field := 0

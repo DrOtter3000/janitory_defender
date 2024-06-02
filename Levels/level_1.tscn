@@ -1245,3 +1245,9 @@ shape = SubResource("BoxShape3D_abvd4")
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="LevelBorder/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.5, 27)
 shape = SubResource("BoxShape3D_im4u0")
+
+[node name="NextWaveTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="NextWaveTimer" to="." method="_on_next_wave_timer_timeout"]
