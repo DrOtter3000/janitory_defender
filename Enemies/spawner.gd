@@ -7,6 +7,7 @@ extends Node3D
 
 
 func _ready() -> void:
+	Gamestate.enemy_target += 5 + Gamestate.wave
 	animation_player.play("incomming")
 
 
@@ -17,7 +18,7 @@ func spawn_enemy() -> void:
 
 
 func _on_enemy_spawn_timer_timeout() -> void:
-	if Gamestate.enemies_on_field < 0 + Gamestate.wave:
+	if Gamestate.enemies_on_field < Gamestate.enemy_target:
 		spawn_enemy()
 		enemy_spawn_timer.start()
 		Gamestate.enemies_on_field += 1

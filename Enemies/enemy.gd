@@ -110,5 +110,5 @@ func spawn_pickup():
 
 
 func die() -> void:
-	Gamestate.enemies_on_field -= 1
+	Gamestate.enemies_killed += 1
 	queue_free()

@@ -15,9 +15,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if not Gamestate.enemies_on_field:
-		if Gamestate.drop_finished:
-			prepare_for_next_level()
+	if Gamestate.enemies_killed == Gamestate.enemy_target:
+		prepare_for_next_level()
 
 
 func start_spawner(pos_x: int, pos_z: int) -> void:
@@ -55,4 +54,7 @@ func prepare_for_next_level() -> void:
 
 func _on_next_wave_timer_timeout() -> void:
 	Gamestate.wave += 1
+	Gamestate.enemies_killed = 0
+	Gamestate.enemies_on_field = 0
+	Gamestate.enemy_target = 0
 	start_wave()
