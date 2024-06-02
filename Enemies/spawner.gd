@@ -3,10 +3,12 @@ extends Node3D
 
 @export var enemy: PackedScene
 @onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
-	enemy_spawn_timer.start()
+	animation_player.play("incomming")
+
 
 func spawn_enemy() -> void:
 	var new_enemy = enemy.instantiate()
@@ -15,5 +17,13 @@ func spawn_enemy() -> void:
 
 
 func _on_enemy_spawn_timer_timeout() -> void:
-	spawn_enemy()
+	if Gamestate.enemies_on_field < 0 + Gamestate.wave:
+		spawn_enemy()
+		enemy_spawn_timer.start()
+		Gamestate.enemies_on_field += 1
+	else:
+		animation_player.play("fly_away")
+
+
+func drop_enemies() -> void:
 	enemy_spawn_timer.start()

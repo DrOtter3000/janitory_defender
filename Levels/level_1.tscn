@@ -54,6 +54,7 @@ size = Vector3(5, 4, 5)
 
 [node name="Level_1" type="Node3D"]
 script = ExtResource("1_abkpr")
+enemy_spawner = ExtResource("9_3mmkn")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hayvl")
@@ -1201,9 +1202,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.1, 51)
 
 [node name="RespawnPosition" type="Marker3D" parent="Level" groups=["respawn_position"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2, 13)
-
-[node name="Spawner" parent="Level" instance=ExtResource("9_3mmkn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 91)
 
 [node name="RUS" parent="Level" instance=ExtResource("10_isycc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 7)
