@@ -206,6 +206,7 @@ theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Lbl_BuildingStatus" type="Label" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2

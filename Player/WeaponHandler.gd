@@ -29,6 +29,7 @@ func _input(event: InputEvent) -> void:
 		next_weapon()
 	if event.is_action_pressed("LastWeaponAction"):
 		last_weapon()
+		
 
 
 func next_weapon() -> void:
