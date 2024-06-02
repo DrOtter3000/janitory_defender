@@ -17,6 +17,10 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var scrap_pickup: PackedScene
 @export var bullet_pickup: PackedScene
 @export var small_bullet_pickup: PackedScene
+@onready var player_detection_cast: RayCast3D = $PlayerDetectionCast
+@onready var reset_timer: Timer = $ResetTimer
+
+
 
 
 var player
@@ -40,6 +44,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	detect_player()
 	if provoked:
 		navigation_agent_3d.target_position = player.global_position
 		if global_position.distance_to(player.global_position) <= attack_range:
@@ -113,3 +118,20 @@ func spawn_pickup():
 func die() -> void:
 	Gamestate.enemies_killed += 1
 	queue_free()
+
+
+func detect_player() -> void:
+	player_detection_cast.target_position = player.global_position
+	if player_detection_cast.is_colliding():
+		if not player_detection_cast.get_collider().is_in_group("player") and reset_timer.is_stopped():
+			reset_timer.start()
+		elif player_detection_cast.get_collider().is_in_group("player"):
+			reset_timer.stop()
+			reset_timer.wait_time = 5.0
+			provoked = true
+		
+
+
+func _on_reset_timer_timeout() -> void:
+	provoked = false
+	reset_timer.wait_time = 5
