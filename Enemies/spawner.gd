@@ -8,7 +8,6 @@ extends Node3D
 
 func _ready() -> void:
 	Gamestate.enemy_target += 5 + Gamestate.wave
-	animation_player.play("incomming")
 
 
 func spawn_enemy() -> void:
