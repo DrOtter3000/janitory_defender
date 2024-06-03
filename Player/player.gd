@@ -21,6 +21,8 @@ class_name Player
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
+var distance_footsteps := 0.0
+var play_footsteps := 3
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var respawn_position: Vector3
 var mouse_motion := Vector2.ZERO
@@ -56,6 +58,15 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if $FloorDetectionRayCast.is_colliding():
+		if play_footsteps != 100 and (int(velocity.x != 0) || int(velocity.z != 0)):
+			distance_footsteps += .1
+		
+		if distance_footsteps > play_footsteps and is_on_floor():
+			$AudioStreamPlayer.pitch_scale = randf_range(0.9, 1.1)
+			$AudioStreamPlayer.play()
+			distance_footsteps = 0.0		
+	
 	if hitpoints > max_hitpoints:
 		hitpoints = max_hitpoints
 	
@@ -94,7 +105,7 @@ func _physics_process(delta) -> void:
 			velocity.y -= gravity * delta
 		else:
 			velocity.y -= gravity * delta * fall_multiplier
-		
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = sqrt(jump_height * 2.0 * gravity)
@@ -112,8 +123,10 @@ func _physics_process(delta) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-
+	
+	
 	move_and_slide()
+
 
 func _input(event) -> void:
 	if event is InputEventMouseMotion:
@@ -161,4 +174,6 @@ func die() -> void:
 
 func update_countdown(value: String) -> void:
 	lbl_countdown.text = value
+
+
 

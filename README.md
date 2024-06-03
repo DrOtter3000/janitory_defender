@@ -38,6 +38,7 @@ Rifle Sound: https://freesound.org/people/MATRIXXX_/sounds/433858/
 SMG Sound: https://freesound.org/people/hyperix6/sounds/676588/
 Ammo Pickup Sound: https://freesound.org/people/Cloud-10/sounds/632822/
 Scrap Pickup Sound: https://freesound.org/people/Ridderick/sounds/707633/
+Walk Concrete Sound: https://freesound.org/people/JustInvoke/sounds/138476/
 
 ## License
 

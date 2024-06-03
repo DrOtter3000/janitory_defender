@@ -223,7 +223,7 @@ navigation_mesh = SubResource("NavigationMesh_ma8h1")
 [node name="Bunker" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9, 0)
 
-[node name="BunkerGround" type="CSGBox3D" parent="Level/Bunker"]
+[node name="BunkerGround" type="CSGBox3D" parent="Level/Bunker" groups=["bunker_terrain"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 use_collision = true
 size = Vector3(60, 4, 60)
@@ -282,7 +282,7 @@ use_collision = true
 size = Vector3(60, 1, 60)
 material = ExtResource("3_8a8er")
 
-[node name="JanitorsRoom" type="CSGBox3D" parent="Level/Bunker"]
+[node name="JanitorsRoom" type="CSGBox3D" parent="Level/Bunker" groups=["bunker_terrain"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 3.5, 14.5)
 use_collision = true
 size = Vector3(29, 7, 29)
@@ -311,7 +311,7 @@ transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 8,
 size = Vector3(3, 3, 5)
 material = ExtResource("3_8a8er")
 
-[node name="BunkerFront" type="CSGBox3D" parent="Level/Bunker"]
+[node name="BunkerFront" type="CSGBox3D" parent="Level/Bunker" groups=["bunker_terrain"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 4.5, 35.5)
 use_collision = true
 size = Vector3(38, 10, 11)
