@@ -149,11 +149,15 @@ weapon_1 = NodePath("SMG")
 weapon_2 = NodePath("Rifle")
 
 [node name="SMG" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" node_paths=PackedStringArray("ammo_handler") instance=ExtResource("3_srrtd")]
+fire_rate = 10.0
 ammo_handler = NodePath("../../AmmoHandler")
 ammo_type = 1
+fire_sound = "res://Weapons/SMG.wav"
 
 [node name="Rifle" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" node_paths=PackedStringArray("ammo_handler") instance=ExtResource("3_0ertj")]
+fire_rate = 1.6
 ammo_handler = NodePath("../../AmmoHandler")
+fire_sound = "res://Weapons/riflesound.wav"
 
 [node name="AmmoHandler" type="Node" parent="SubViewportContainer/SubViewport/WeaponCamera" node_paths=PackedStringArray("ammo_label")]
 unique_name_in_owner = true

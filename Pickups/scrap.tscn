@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1pk6lab7kpld"]
+[gd_scene load_steps=13 format=3 uid="uid://d1pk6lab7kpld"]
 
 [ext_resource type="Script" path="res://Pickups/scrap.gd" id="1_fnof4"]
 [ext_resource type="Shader" uid="uid://c6kp2p2hjxmbl" path="res://Pickups/FrenalAura.tres" id="1_wuql3"]
+[ext_resource type="AudioStream" uid="uid://7reijioqvqwd" path="res://Pickups/scrapcollect.wav" id="3_0k7rn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0gxt"]
 albedo_color = Color(0.418859, 0.308104, 0.308307, 1)
@@ -26,6 +27,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0.785398, 0, 0.785398)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_0hdee"]
 resource_name = "idle"
@@ -44,8 +57,45 @@ tracks/0/keys = {
 "values": [Vector3(0.785398, 0, 0.785398), Vector3(0.785398, 6.28319, 0.785398)]
 }
 
+[sub_resource type="Animation" id="Animation_6r236"]
+resource_name = "Collected"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"play_sound"
+}, {
+"args": [],
+"method": &"set_as_collected"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k38km"]
 _data = {
+"Collected": SubResource("Animation_6r236"),
 "RESET": SubResource("Animation_1j02h"),
 "idle": SubResource("Animation_0hdee")
 }
@@ -82,6 +132,9 @@ mesh = SubResource("SphereMesh_spyk3")
 wait_time = 25.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0k7rn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

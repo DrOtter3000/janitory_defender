@@ -10,11 +10,11 @@ extends Node3D
 @export var automatic: bool 
 @export var ammo_handler: AmmoHandler
 @export var ammo_type: AmmoHandler.ammo_type
+@export var fire_sound: String
 
 @onready var cooldown_timer: Timer = $CooldownTimer
 @onready var weapon_position: Vector3 = weapon_mesh.position
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,3 +46,7 @@ func shoot() -> void:
 		if ray_cast_3d.is_colliding():
 			add_child(spark)
 			spark.global_position = ray_cast_3d.get_collision_point()
+		
+		$AudioStreamPlayer.stream = load(fire_sound)
+		$AudioStreamPlayer.pitch_scale = randf_range(0.9, 1.1)
+		$AudioStreamPlayer.play()

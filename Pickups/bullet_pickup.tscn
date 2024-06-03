@@ -7,6 +7,7 @@ albedo_color = Color(0.71087, 0.312529, 0.398811, 1)
 
 [node name="BulletPickup" instance=ExtResource("1_tqdfg")]
 amount = 5
+collect_sound = "res://Pickups/reloadSound.wav"
 
 [node name="AmmoMesh" parent="." index="0"]
 transform = Transform3D(0.707107, -0.707107, 0, 0.5, 0.5, -0.707107, 0.5, 0.5, 0.707107, 0, 0, 0)

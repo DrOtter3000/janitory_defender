@@ -32,7 +32,12 @@ I welcome contributions from the community! If you wish to contribute:
 
 ## Assets
 
-All game assets, including sprites, animations, and sounds, are made by the developer and are licensed under Creative Commons Zero (CC0). Feel free to use and modify them for your own projects.
+### Sound
+
+Rifle Sound: https://freesound.org/people/MATRIXXX_/sounds/433858/
+SMG Sound: https://freesound.org/people/hyperix6/sounds/676588/
+Ammo Pickup Sound: https://freesound.org/people/Cloud-10/sounds/632822/
+Scrap Pickup Sound: https://freesound.org/people/Ridderick/sounds/707633/
 
 ## License
 

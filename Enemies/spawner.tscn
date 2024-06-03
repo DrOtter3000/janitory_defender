@@ -207,7 +207,7 @@ script = ExtResource("1_dcsj1")
 enemy = ExtResource("2_e81ml")
 
 [node name="Ship" parent="." instance=ExtResource("3_70dr6")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 100, 1000)
+transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, 0, 100, 1000)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0, 0, 0)
