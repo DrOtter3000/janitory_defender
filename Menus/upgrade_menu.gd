@@ -8,11 +8,6 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("upgrade"):
-		visible != visible
-		
-
 
 func _on_btn_back_pressed() -> void:
 	Input.mouse_mode =Input.MOUSE_MODE_CAPTURED
