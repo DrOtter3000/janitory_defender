@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0uskbfwt5p70"]
+[gd_scene load_steps=15 format=3 uid="uid://b0uskbfwt5p70"]
 
 [ext_resource type="Script" path="res://Enemies/enemy.gd" id="1_2ts3h"]
 [ext_resource type="PackedScene" uid="uid://d1pk6lab7kpld" path="res://Pickups/scrap.tscn" id="2_ulwrf"]
 [ext_resource type="PackedScene" uid="uid://bi0jp2a8df82m" path="res://Pickups/bullet_pickup.tscn" id="3_vls1k"]
 [ext_resource type="PackedScene" uid="uid://2vs8baybxrfh" path="res://Pickups/small_bullet_pickup.tscn" id="4_5xb3j"]
+[ext_resource type="PackedScene" uid="uid://cvsh8j7wb7dn6" path="res://Enemies/Enemy.glb" id="5_67d58"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tnovq"]
 
@@ -60,6 +61,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enemy/Cube_004:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.482491, -0.338886, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enemy/Cube_004:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_sbad2"]
 resource_name = "attack_door"
@@ -96,6 +121,30 @@ tracks/0/keys = {
 "method": &"damage_generator"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enemy/Cube_004:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.482491, -0.338886, 0), Vector3(0.582491, 0.161114, -0.5), Vector3(0.257491, 0.136114, -0.375), Vector3(0.482491, -0.338886, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enemy/Cube_004:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.46744, -0.706615, -0.450712), Vector3(1.51763, -0.922617, -1.17645), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_thf66"]
 _data = {
@@ -117,7 +166,14 @@ scrap_pickup = ExtResource("2_ulwrf")
 bullet_pickup = ExtResource("3_vls1k")
 small_bullet_pickup = ExtResource("4_5xb3j")
 
+[node name="Enemy" parent="." instance=ExtResource("5_67d58")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.1, 0)
+
+[node name="Cube_004" parent="Enemy" index="5"]
+transform = Transform3D(0.09, 0, 0, 0, 0.65, 0, 0, 0, 0.09, 0.482491, -0.338886, 0)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_tnovq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -129,6 +185,7 @@ radius = 0.4
 
 [node name="Visor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
+visible = false
 material_override = SubResource("StandardMaterial3D_jh3su")
 mesh = SubResource("BoxMesh_oyf7b")
 
@@ -148,3 +205,5 @@ wait_time = 5.0
 one_shot = true
 
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
+
+[editable path="Enemy"]

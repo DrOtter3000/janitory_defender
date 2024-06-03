@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs0ot7b1sokw1"]
+[gd_scene load_steps=7 format=3 uid="uid://bs0ot7b1sokw1"]
 
 [ext_resource type="Script" path="res://Levels/rus.gd" id="1_3pokq"]
 [ext_resource type="Material" uid="uid://bq3ngqp6fgt0d" path="res://Levels/Materials/orange_material.tres" id="1_5s7w6"]
+[ext_resource type="PackedScene" uid="uid://c07yoc8qceyrr" path="res://Levels/Assets/RUS.glb" id="2_f0x33"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1p2cb"]
 size = Vector3(3, 1, 2)
@@ -23,7 +24,11 @@ small_bullets = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 shape = SubResource("BoxShape3D_1p2cb")
 
+[node name="RUS" parent="." instance=ExtResource("2_f0x33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0956234, 0)
+
 [node name="Terminal" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_rdspo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Terminal"]

@@ -1,31 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://daipt4djlbggm"]
+[gd_scene load_steps=5 format=3 uid="uid://daipt4djlbggm"]
 
 [ext_resource type="Script" path="res://Levels/Generator.gd" id="1_5bb7g"]
-[ext_resource type="Material" uid="uid://bq3ngqp6fgt0d" path="res://Levels/Materials/orange_material.tres" id="2_q61k5"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_b52jf"]
-material = ExtResource("2_q61k5")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4epxy"]
+[ext_resource type="PackedScene" uid="uid://d36cnisb3yjxj" path="res://Levels/Assets/Generator.glb" id="2_sv2uv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_p4f1n"]
 radius = 1.5
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_54m4r"]
+
 [node name="Generator" type="Node3D" groups=["generator"]]
 script = ExtResource("1_5bb7g")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_b52jf")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_4epxy")
 
 [node name="AttackArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27762, 0)
 shape = SubResource("CylinderShape3D_p4f1n")
+
+[node name="Generator" parent="." instance=ExtResource("2_sv2uv")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Generator"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Generator/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Generator/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31664, 0)
+shape = SubResource("CylinderShape3D_54m4r")
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

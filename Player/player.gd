@@ -22,7 +22,7 @@ class_name Player
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var distance_footsteps := 0.0
-var play_footsteps := 3
+var play_footsteps := 2
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var respawn_position: Vector3
 var mouse_motion := Vector2.ZERO
@@ -61,7 +61,6 @@ func _process(delta: float) -> void:
 	if $FloorDetectionRayCast.is_colliding():
 		if play_footsteps != 100 and (int(velocity.x != 0) || int(velocity.z != 0)):
 			distance_footsteps += .1
-		
 		if distance_footsteps > play_footsteps and is_on_floor():
 			$AudioStreamPlayer.pitch_scale = randf_range(0.9, 1.1)
 			$AudioStreamPlayer.play()

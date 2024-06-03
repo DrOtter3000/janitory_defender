@@ -369,7 +369,7 @@ material = ExtResource("3_8a8er")
 [node name="Interior" type="Node3D" parent="Level/Bunker"]
 
 [node name="Generator" parent="Level/Bunker/Interior" instance=ExtResource("4_g4jij")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22, 1.5, -15)
+transform = Transform3D(-4.15258e-08, 0, -0.95, 0, 0.95, 0, 0.95, 0, -4.15258e-08, 22, -1.19209e-07, -15)
 
 [node name="Lamps" type="Node3D" parent="Level/Bunker/Interior"]
 
@@ -1205,7 +1205,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.1, 51)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2, 13)
 
 [node name="RUS" parent="Level" instance=ExtResource("10_isycc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.6, 7.1)
 
 [node name="LevelBorder" type="MeshInstance3D" parent="."]
 
