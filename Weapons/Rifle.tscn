@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b42cj6rbv4i84"]
+[gd_scene load_steps=10 format=3 uid="uid://b42cj6rbv4i84"]
 
 [ext_resource type="PackedScene" uid="uid://bl3ui81bhmfs6" path="res://Weapons/hitscan_weapon.tscn" id="1_euhi3"]
 [ext_resource type="PackedScene" uid="uid://iufcrv3g26f0" path="res://Weapons/sparks.tscn" id="2_hom7y"]
 [ext_resource type="PackedScene" uid="uid://dtnyd0uwion11" path="res://Weapons/Rifle.glb" id="3_xdr2q"]
+[ext_resource type="Material" uid="uid://bffkmvm8skqyn" path="res://Weapons/RifleBlack.tres" id="4_pm3ug"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tw4v1"]
 emission_enabled = true
@@ -39,12 +40,15 @@ transform = Transform3D(-0.266987, 0.125073, 0.955549, 0.0500272, 0.992004, -0.1
 
 [node name="Cylinder" parent="Rifle" index="0"]
 layers = 2
+material_override = ExtResource("4_pm3ug")
 
 [node name="Cube" parent="Rifle" index="1"]
 layers = 2
+material_override = ExtResource("4_pm3ug")
 
 [node name="Cube_001" parent="Rifle" index="2"]
 layers = 2
+material_override = ExtResource("4_pm3ug")
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="." index="3"]
 transform = Transform3D(-0.228572, 0, 0.973527, 0, 1, 0, -0.973527, 0, -0.228572, 0.280619, -0.147533, -1.51297)

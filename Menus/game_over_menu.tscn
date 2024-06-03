@@ -46,7 +46,7 @@ alignment = 1
 [node name="Lbl_Message" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
-text = "You Died"
+text = "Generator Destroyed"
 horizontal_alignment = 1
 
 [node name="Btn_Restart" type="Button" parent="CenterContainer/VBoxContainer"]
