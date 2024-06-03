@@ -75,7 +75,7 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"damage_building"
+"method": &"damage_door"
 }]
 }
 
@@ -93,7 +93,7 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"damage_building"
+"method": &"damage_generator"
 }]
 }
 

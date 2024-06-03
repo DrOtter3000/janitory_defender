@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Node3D
 
 
 var player
@@ -13,3 +13,13 @@ func _process(delta: float) -> void:
 	if Gamestate.generator_health <= 0:
 		player.game_over()
 		queue_free()
+
+
+func _on_attack_area_body_entered(body: Node3D) -> void:
+	if body is Enemy:
+		body.in_generator_range = true
+
+
+func _on_attack_area_body_exited(body: Node3D) -> void:
+	if body is Enemy:
+		body.in_generator_range = false

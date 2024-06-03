@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7vxadoq6vfb5"]
+[gd_scene load_steps=6 format=3 uid="uid://b7vxadoq6vfb5"]
 
 [ext_resource type="Script" path="res://Levels/door.gd" id="1_6ddeh"]
 [ext_resource type="Material" uid="uid://bq3ngqp6fgt0d" path="res://Levels/Materials/orange_material.tres" id="1_t6f38"]
@@ -10,6 +10,9 @@ size = Vector3(6, 5.5, 0.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ng8mq"]
 size = Vector3(6, 5.5, 0.3)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjevj"]
+size = Vector3(6, 5, 3)
+
 [node name="Door" type="Node3D"]
 script = ExtResource("1_6ddeh")
 
@@ -20,3 +23,11 @@ mesh = SubResource("BoxMesh_36kc2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" groups=["door"]]
 shape = SubResource("BoxShape3D_ng8mq")
+
+[node name="AttackRange" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackRange"]
+shape = SubResource("BoxShape3D_fjevj")
+
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]

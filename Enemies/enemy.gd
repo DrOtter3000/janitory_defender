@@ -20,6 +20,8 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var player_detection_cast: RayCast3D = $PlayerDetectionCast
 @onready var reset_timer: Timer = $ResetTimer
 
+var in_door_range := false
+var in_generator_range := false
 
 
 
@@ -52,11 +54,11 @@ func _process(delta: float) -> void:
 	else:
 		if Gamestate.door_health > 0:
 			navigation_agent_3d.target_position = door.global_position
-			if global_position.distance_to(door.global_position) <= attack_range:
+			if in_door_range:
 				animation_player.play("attack_door")
 		else:
 			navigation_agent_3d.target_position = generator.global_position
-			if global_position.distance_to(generator.global_position) <= attack_range:
+			if in_generator_range:
 				animation_player.play("attack_generator")
 
 
@@ -94,11 +96,12 @@ func attack() -> void:
 	player.hitpoints -= damage
 
 
-func damage_building() -> void:
-	if Gamestate.door_health > 0:
-		Gamestate.door_health -= damage
-	else:
-		Gamestate.generator_health -= damage
+func damage_door() -> void:
+	Gamestate.door_health -= damage
+
+
+func damage_generator() -> void:
+	Gamestate.generator_health -= damage
 
 
 func spawn_pickup():
@@ -135,3 +138,5 @@ func detect_player() -> void:
 func _on_reset_timer_timeout() -> void:
 	provoked = false
 	reset_timer.wait_time = 5
+
+
