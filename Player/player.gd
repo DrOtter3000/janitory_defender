@@ -40,7 +40,7 @@ var hitpoints: int = max_hitpoints:
 		lbl_health.text = str(str(value) + " / " + str(max_hitpoints))
 		healthbar.value = value
 
-
+@onready var upgrade_menu: Control = $UpgradeMenu
 @onready var game_over_menu: Control = $GameOverMenu
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var damage_animation_player: AnimationPlayer = $DamageTexture/DamageAnimationPlayer
@@ -133,6 +133,11 @@ func _input(event) -> void:
 			mouse_motion = -event.relative * 0.001
 	if event.is_action_pressed("pause"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if event.is_action_pressed("upgrade"):
+		upgrade_menu.visible = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_tree().paused = true
+		get_tree().call_group("upgrademenu", "upgrade_scrap")
 
 
 func handle_camera_rotation() -> void:
@@ -175,4 +180,6 @@ func update_countdown(value: String) -> void:
 	lbl_countdown.text = value
 
 
-
+func upgrade_labels():
+	lbl_health.text = str(str(hitpoints) + " / " + str(max_hitpoints))
+	healthbar.max_value = max_hitpoints
