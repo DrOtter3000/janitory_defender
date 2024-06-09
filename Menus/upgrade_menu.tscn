@@ -10,6 +10,7 @@ shader = ExtResource("2_22tbn")
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0qpo3"]
 
 [node name="UpgradeMenu" type="Control" groups=["upgrademenu"]]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

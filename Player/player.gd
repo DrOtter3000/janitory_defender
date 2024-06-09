@@ -40,11 +40,14 @@ var hitpoints: int = max_hitpoints:
 		lbl_health.text = str(str(value) + " / " + str(max_hitpoints))
 		healthbar.value = value
 
+
+@onready var options_menu: Control = $OptionsMenu
 @onready var upgrade_menu: Control = $UpgradeMenu
 @onready var game_over_menu: Control = $GameOverMenu
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var damage_animation_player: AnimationPlayer = $DamageTexture/DamageAnimationPlayer
 var max_health_door := 0
+var mouse_sensetivity := 1.0
 
 
 func _ready() -> void:
@@ -130,14 +133,16 @@ func _physics_process(delta) -> void:
 func _input(event) -> void:
 	if event is InputEventMouseMotion:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			mouse_motion = -event.relative * 0.001
-	if event.is_action_pressed("pause"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			mouse_motion = -event.relative * mouse_sensetivity * 0.001
 	if event.is_action_pressed("upgrade"):
 		upgrade_menu.visible = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_tree().paused = true
 		get_tree().call_group("upgrademenu", "upgrade_scrap")
+	if event.is_action_pressed("pause"):
+		options_menu.visible = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_tree().paused = true
 
 
 func handle_camera_rotation() -> void:
@@ -183,3 +188,7 @@ func update_countdown(value: String) -> void:
 func upgrade_labels():
 	lbl_health.text = str(str(hitpoints) + " / " + str(max_hitpoints))
 	healthbar.max_value = max_hitpoints
+
+
+func quit_pause(m_sens: float):
+	mouse_sensetivity = m_sens

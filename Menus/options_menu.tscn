@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://w7ce5kygrj6j"]
+
+[ext_resource type="Theme" uid="uid://dtdon6iqghbvu" path="res://Assets/Themes/Menu_Theme.tres" id="1_05onk"]
+[ext_resource type="Script" path="res://Menus/options_menu.gd" id="1_a7kwj"]
+
+[node name="OptionsMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a7kwj")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_05onk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LblHeading" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Options"
+horizontal_alignment = 1
+
+[node name="LblMouse" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mouse Sensetivity"
+
+[node name="SliderSensetivity" type="HSlider" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 0.05
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="BtnBack" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/BtnBack" to="." method="_on_btn_back_pressed"]
