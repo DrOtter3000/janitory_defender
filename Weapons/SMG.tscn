@@ -61,4 +61,7 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_34kcp")
 draw_pass_1 = SubResource("BoxMesh_cv2y3")
 
+[node name="AudioStreamPlayer" parent="." index="4"]
+volume_db = -12.0
+
 [editable path="SMG"]
