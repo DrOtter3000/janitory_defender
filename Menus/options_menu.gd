@@ -16,3 +16,6 @@ func _on_btn_back_pressed() -> void:
 	visible = false
 
 
+
+func _on_btn_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://Menus/main_menu.tscn")
