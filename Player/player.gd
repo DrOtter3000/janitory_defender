@@ -192,3 +192,4 @@ func upgrade_labels():
 
 func quit_pause(m_sens: float):
 	mouse_sensetivity = m_sens
+

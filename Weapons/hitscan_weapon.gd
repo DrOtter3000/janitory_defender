@@ -23,10 +23,14 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("fire"):
 			if cooldown_timer.is_stopped():
 				shoot()
+		if visible:
+			$RayCast3D.target_position.z = -100
 	else:
 		if Input.is_action_just_pressed("fire"):
 			if cooldown_timer.is_stopped():
 				shoot()
+		if visible:
+			$RayCast3D.target_position.z = -1000
 
 	weapon_mesh.position = weapon_mesh.position.lerp(weapon_position, delta * 10.0)
 
