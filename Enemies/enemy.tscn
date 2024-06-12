@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0uskbfwt5p70"]
+[gd_scene load_steps=16 format=3 uid="uid://b0uskbfwt5p70"]
 
 [ext_resource type="Script" path="res://Enemies/enemy.gd" id="1_2ts3h"]
 [ext_resource type="PackedScene" uid="uid://d1pk6lab7kpld" path="res://Pickups/scrap.tscn" id="2_ulwrf"]
@@ -85,6 +85,54 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enemy/Cube:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.16, -1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enemy/Cube:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Enemy/Cube_002:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.785398, 3.62117e-08, 8.74228e-08)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Enemy/Cube_002:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.16, -1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_sbad2"]
 resource_name = "attack_door"
@@ -170,12 +218,66 @@ tracks/2/keys = {
 "values": [Vector3(0, 0, 0), Vector3(1.46744, -0.706615, -0.450712), Vector3(1.51763, -0.922617, -1.17645), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_r8a7d"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Cube:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.16, -1, 0), Vector3(-0.16, -0.9, 0.3), Vector3(-0.16, -1, 0), Vector3(-0.16, -0.9, -0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enemy/Cube:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.785398, 0, 0), Vector3(0, 0, 0), Vector3(0.785398, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enemy/Cube_002:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.785398, 3.62117e-08, 8.74228e-08), Vector3(0, 0, 0), Vector3(-0.785398, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enemy/Cube_002:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.16, -1, 0), Vector3(0.16, -1, 0), Vector3(0.16, -0.9, -0.4), Vector3(0.16, -1, 0), Vector3(0.16, -0.9, 0.3)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_thf66"]
 _data = {
 "Attack": SubResource("Animation_d5arp"),
 "RESET": SubResource("Animation_sy4nc"),
 "attack_door": SubResource("Animation_sbad2"),
-"attack_generator": SubResource("Animation_2bvy4")
+"attack_generator": SubResource("Animation_2bvy4"),
+"walk": SubResource("Animation_r8a7d")
 }
 
 [node name="Enemy" type="CharacterBody3D"]
@@ -192,6 +294,9 @@ small_bullet_pickup = ExtResource("4_5xb3j")
 
 [node name="Enemy" parent="." instance=ExtResource("5_67d58")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.1, 0)
+
+[node name="Cube_002" parent="Enemy" index="3"]
+transform = Transform3D(0.101137, -3.70904e-08, 2.58967e-09, 6.25201e-09, 0.424264, -0.0715147, 2.58967e-09, 0.424264, 0.0715147, 0.16, -1, 0)
 
 [node name="Cube_004" parent="Enemy" index="5"]
 transform = Transform3D(0.09, 0, 0, 0, 0.65, 0, 0, 0, 0.09, 0.482491, -0.338886, 0)

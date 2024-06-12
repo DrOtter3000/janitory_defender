@@ -19,6 +19,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var small_bullet_pickup: PackedScene
 @onready var player_detection_cast: RayCast3D = $PlayerDetectionCast
 @onready var reset_timer: Timer = $ResetTimer
+@onready var walk_player: AnimationPlayer = $WalkPlayer
 
 var in_door_range := false
 var in_generator_range := false
@@ -46,6 +47,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if velocity.x != 0 or velocity.z != 0:
+		animation_player.play("walk")
 	detect_player()
 	if provoked:
 		navigation_agent_3d.target_position = player.global_position
@@ -138,5 +141,4 @@ func detect_player() -> void:
 func _on_reset_timer_timeout() -> void:
 	provoked = false
 	reset_timer.wait_time = 5
-
 
