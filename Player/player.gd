@@ -61,8 +61,6 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	#if hitpoints > max_hitpoints:
-		#hitpoints = max_hitpoints
 	upgrade_labels()
 	if $FloorDetectionRayCast.is_colliding():
 		if play_footsteps != 100 and (int(velocity.x != 0) || int(velocity.z != 0)):
