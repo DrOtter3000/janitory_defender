@@ -19,7 +19,6 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var small_bullet_pickup: PackedScene
 @onready var player_detection_cast: RayCast3D = $PlayerDetectionCast
 @onready var reset_timer: Timer = $ResetTimer
-@onready var walk_player: AnimationPlayer = $WalkPlayer
 
 var in_door_range := false
 var in_generator_range := false
