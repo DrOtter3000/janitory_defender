@@ -38,8 +38,8 @@ var hitpoints: int = max_hitpoints:
 			damage_animation_player.play("TakeDamage")
 		hitpoints = value
 		healthbar.value = value
-		upgrade_labels()
-
+		if hitpoints > max_hitpoints:
+			hitpoints = max_hitpoints
 
 @onready var options_menu: Control = $OptionsMenu
 @onready var upgrade_menu: Control = $UpgradeMenu
@@ -61,6 +61,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	#if hitpoints > max_hitpoints:
+		#hitpoints = max_hitpoints
+	upgrade_labels()
 	if $FloorDetectionRayCast.is_colliding():
 		if play_footsteps != 100 and (int(velocity.x != 0) || int(velocity.z != 0)):
 			distance_footsteps += .1
@@ -69,7 +72,6 @@ func _process(delta: float) -> void:
 			$AudioStreamPlayer.play()
 			distance_footsteps = 0.0		
 	
-	hitpoints = min(hitpoints, max_hitpoints)
 	
 	if hitpoints < 0:
 		die()
