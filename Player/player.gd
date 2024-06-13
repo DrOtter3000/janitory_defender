@@ -37,8 +37,8 @@ var hitpoints: int = max_hitpoints:
 			damage_animation_player.stop()
 			damage_animation_player.play("TakeDamage")
 		hitpoints = value
-		lbl_health.text = str(str(value) + " / " + str(max_hitpoints))
 		healthbar.value = value
+		upgrade_labels()
 
 
 @onready var options_menu: Control = $OptionsMenu
@@ -69,8 +69,7 @@ func _process(delta: float) -> void:
 			$AudioStreamPlayer.play()
 			distance_footsteps = 0.0		
 	
-	if hitpoints > max_hitpoints:
-		hitpoints = max_hitpoints
+	hitpoints = min(hitpoints, max_hitpoints)
 	
 	if hitpoints < 0:
 		die()

@@ -107,6 +107,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
+visible = false
 script = ExtResource("1_s7413")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

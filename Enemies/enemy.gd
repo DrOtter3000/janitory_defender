@@ -25,7 +25,6 @@ var in_door_range := false
 var in_generator_range := false
 
 
-
 var player
 var door
 var generator

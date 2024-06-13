@@ -39,6 +39,10 @@ shape = SubResource("BoxShape3D_4glg6")
 [node name="Ammotimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Healthtimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="body_entered" from="ReloadArea" to="." method="_on_reload_area_body_entered"]
 [connection signal="body_exited" from="ReloadArea" to="." method="_on_reload_area_body_exited"]
 [connection signal="timeout" from="Ammotimer" to="." method="_on_ammotimer_timeout"]
+[connection signal="timeout" from="Healthtimer" to="." method="_on_healthtimer_timeout"]
