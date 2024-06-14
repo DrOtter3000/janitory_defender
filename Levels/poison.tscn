@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://wxcawnqfq7sy"]
+
+[ext_resource type="Script" path="res://Levels/Poison.gd" id="1_ohat8"]
+[ext_resource type="Material" uid="uid://ded4cq2efb4v" path="res://Levels/Materials/poison_material.tres" id="2_f85ef"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oi005"]
+resource_local_to_scene = true
+size = Vector2(24, 5)
+
+[node name="Poison" type="Area3D"]
+script = ExtResource("1_ohat8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_f85ef")
+mesh = SubResource("PlaneMesh_oi005")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
